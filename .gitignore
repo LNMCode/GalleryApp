@@ -13,4 +13,7 @@
 .externalNativeBuild
 .cxx
 local.properties
-./.idea
+
+#ignore .idea
+/.idea
+.idea/
