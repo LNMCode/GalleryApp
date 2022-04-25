@@ -1,8 +1,8 @@
-package com.lnmcode.galleryapp.business.datasource.network.search
+package com.lnmcode.galleryapp.business.datasource.network.topics
 
 import com.google.gson.annotations.SerializedName
 
-data class SearchResultsDto(
+data class TopicsCoverPhotoDto(
     @SerializedName("id"                       ) val id                     : String,
     @SerializedName("created_at"               ) val createdAt              : String,
     @SerializedName("updated_at"               ) val updatedAt              : String,
@@ -13,10 +13,11 @@ data class SearchResultsDto(
     @SerializedName("blur_hash"                ) val blurHash               : String,
     @SerializedName("description"              ) val description            : String,
     @SerializedName("alt_description"          ) val altDescription         : String,
-    @SerializedName("urls"                     ) val searchUrls             : SearchUrlsDto,
-    @SerializedName("links"                    ) val links                  : SearchLinksDto,
+    @SerializedName("urls"                     ) val topicsCoverPhotoUrls   : TopicsCoverPhotoUrlsDto,
+    @SerializedName("links"                    ) val topicsCoverPhotoLinks  : TopicsCoverPhotoLinksDto,
     @SerializedName("likes"                    ) val likes                  : Int?,
     @SerializedName("liked_by_user"            ) val likedByUser            : Boolean,
-    @SerializedName("sponsorship"              ) val sponsorship            : String,
-    @SerializedName("user"                     ) val searchUser             : SearchUsersDto,
+    @SerializedName("sponsorship"              ) val sponsorship            : String?,
+    @SerializedName("user"                     ) val topicsUser              : TopicsUsersDto
+
 )

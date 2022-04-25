@@ -1,9 +1,10 @@
-package com.lnmcode.galleryapp.business.datasource.network.search
+package com.lnmcode.galleryapp.business.datasource.network.topics
 
 import com.google.gson.annotations.SerializedName
 
-data class SearchUserProfileImageDto(
+data class TopicsUserProfileImageDto(
     @SerializedName("small"  ) val small  : String,
     @SerializedName("medium" ) val medium : String,
     @SerializedName("large"  ) val large  : String
+
 )

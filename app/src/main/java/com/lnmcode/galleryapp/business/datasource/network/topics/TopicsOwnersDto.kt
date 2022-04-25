@@ -1,8 +1,8 @@
-package com.lnmcode.galleryapp.business.datasource.network.search
+package com.lnmcode.galleryapp.business.datasource.network.topics
 
 import com.google.gson.annotations.SerializedName
 
-data class SearchUsersDto (
+data class TopicsOwnersDto(
     @SerializedName("id"                 ) val id                : String,
     @SerializedName("updated_at"         ) val updatedAt         : String,
     @SerializedName("username"           ) val username          : String,
@@ -13,12 +13,13 @@ data class SearchUsersDto (
     @SerializedName("portfolio_url"      ) val portfolioUrl      : String,
     @SerializedName("bio"                ) val bio               : String,
     @SerializedName("location"           ) val location          : String,
-    @SerializedName("links"              ) val links             : SearchUserLinksDto,
-    @SerializedName("profile_image"      ) val profileImage      : SearchUserProfileImageDto,
+    @SerializedName("links"              ) val topicsOwnerLinksDto             : TopicsOwnersLinksDto,
+    @SerializedName("profile_image"      ) val topicsOwnerProfileImageDto      :TopicsOwnersProfileImageDto,
     @SerializedName("instagram_username" ) val instagramUsername : String,
     @SerializedName("total_collections"  ) val totalCollections  : Int,
     @SerializedName("total_likes"        ) val totalLikes        : Int,
     @SerializedName("total_photos"       ) val totalPhotos       : Int,
     @SerializedName("accepted_tos"       ) val acceptedTos       : Boolean,
     @SerializedName("for_hire"           ) val forHire           : Boolean,
-    )
+
+)
