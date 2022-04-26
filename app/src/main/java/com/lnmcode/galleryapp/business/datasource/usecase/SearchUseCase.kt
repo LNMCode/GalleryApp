@@ -4,7 +4,7 @@ import com.lnmcode.galleryapp.business.datasource.network.helper.search.SearchIA
 import com.lnmcode.galleryapp.business.datasource.network.search.SearchResultsDto
 import java.nio.channels.spi.AbstractSelectionKey
 
-class SearchUseCase(val searchIApiRepository: SearchIApiRepository) {
+class SearchUseCase(private val searchIApiRepository: SearchIApiRepository) {
     suspend fun getSearch(query :String, key: String) : List<SearchResultsDto>{
         val repository = searchIApiRepository.search(query = query, key = key)
         return  repository.results
