@@ -1,11 +1,11 @@
-package com.lnmcode.galleryapp.business.datasource.network.topic.reponse
+package com.lnmcode.galleryapp.business.datasource.network.topicphoto.reponse
 
 import com.google.gson.annotations.SerializedName
-import com.lnmcode.galleryapp.business.datasource.network.topic.TopicLinksDto
-import com.lnmcode.galleryapp.business.datasource.network.topic.TopicUrlsDto
-import com.lnmcode.galleryapp.business.datasource.network.topic.TopicUserDto
+import com.lnmcode.galleryapp.business.datasource.network.topicphoto.TopicPhotoLinksDto
+import com.lnmcode.galleryapp.business.datasource.network.topicphoto.TopicPhotoUrlsDto
+import com.lnmcode.galleryapp.business.datasource.network.topicphoto.TopicPhotoUserDto
 
-data class topic(
+data class TopicPhoto(
     @SerializedName("id"                       ) val id                     : String,
     @SerializedName("created_at"               ) val createdAt              : String,
     @SerializedName("updated_at"               ) val updatedAt              : String,
@@ -16,10 +16,10 @@ data class topic(
     @SerializedName("blur_hash"                ) val blurHash               : String,
     @SerializedName("description"              ) val description            : String,
     @SerializedName("alt_description"          ) val altDescription         : String,
-    @SerializedName("urls"                     ) val topicUrlsDto           : TopicUrlsDto,
-    @SerializedName("links"                    ) val topicLinksDto          : TopicLinksDto,
+    @SerializedName("urls"                     ) val topicPhotoUrlsDto           : TopicPhotoUrlsDto,
+    @SerializedName("links"                    ) val topicPhotoLinksDto          : TopicPhotoLinksDto,
     @SerializedName("likes"                    ) val likes                  : Int,
     @SerializedName("liked_by_user"            ) val likedByUser            : Boolean,
     @SerializedName("sponsorship"              ) val sponsorship            : String,
-    @SerializedName("user"                     ) val topicUserDto            : TopicUserDto
+    @SerializedName("user"                     ) val topicPhotoUserDto            : TopicPhotoUserDto
 )
