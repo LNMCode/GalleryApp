@@ -1,8 +1,8 @@
-package com.lnmcode.galleryapp.business.datasource.network.topic
+package com.lnmcode.galleryapp.business.datasource.network.topicphoto
 
 import com.google.gson.annotations.SerializedName
 
-data class TopicUrlsDto(
+data class TopicPhotoUrlsDto(
     @SerializedName("raw"      ) val raw     : String,
     @SerializedName("full"     ) val full    : String,
     @SerializedName("regular"  ) val regular : String,
