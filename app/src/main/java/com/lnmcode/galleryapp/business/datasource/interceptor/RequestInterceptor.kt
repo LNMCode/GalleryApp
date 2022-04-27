@@ -1,4 +1,4 @@
-package com.lnmcode.galleryapp.business.datasourcce.network.interceptor
+package com.lnmcode.galleryapp.business.datasource.interceptor
 
 import okhttp3.Interceptor
 import okhttp3.Response

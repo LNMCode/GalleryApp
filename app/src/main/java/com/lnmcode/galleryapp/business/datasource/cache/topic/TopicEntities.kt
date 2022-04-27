@@ -1,4 +1,4 @@
-package com.lnmcode.galleryapp.business.datasourcce.cache.topic
+package com.lnmcode.galleryapp.business.datasource.cache.topic
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

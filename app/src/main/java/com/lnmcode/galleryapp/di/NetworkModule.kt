@@ -1,6 +1,6 @@
 package com.lnmcode.galleryapp.di
 
-import com.lnmcode.galleryapp.business.datasourcce.network.interceptor.RequestInterceptor
+import com.lnmcode.galleryapp.business.datasource.interceptor.RequestInterceptor
 import okhttp3.OkHttpClient
 import org.koin.dsl.module
 import retrofit2.Retrofit

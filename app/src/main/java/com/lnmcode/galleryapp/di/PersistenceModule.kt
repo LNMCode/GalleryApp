@@ -3,7 +3,7 @@ package com.lnmcode.galleryapp.di
 import android.content.Context
 import androidx.room.Room
 import com.lnmcode.galleryapp.R
-import com.lnmcode.galleryapp.business.datasourcce.cache.AppDatabase
+import com.lnmcode.galleryapp.business.datasource.cache.AppDatabase
 import org.koin.android.ext.koin.androidApplication
 import org.koin.dsl.module
 
