@@ -1,4 +1,4 @@
-package com.lnmcode.galleryapp.presentation
+package com.lnmcode.galleryapp.presentation.ui
 
 import android.app.Application
 import android.content.Context
