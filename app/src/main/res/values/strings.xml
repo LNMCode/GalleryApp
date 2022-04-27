@@ -1,4 +1,3 @@
 <resources>
     <string name="app_name">GalleryApp</string>
-    <string name="database_name">GalleryApp.db</string>
 </resources>

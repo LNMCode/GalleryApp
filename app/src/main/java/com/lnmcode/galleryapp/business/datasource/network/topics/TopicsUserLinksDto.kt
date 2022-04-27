@@ -9,6 +9,6 @@ data class TopicsUserLinksDto(
     @SerializedName("likes"     ) val likes     : String,
     @SerializedName("portfolio" ) val portfolio : String,
     @SerializedName("following" ) val following : String,
-    @SerializedName("followers" ) val followers : String,
+    @SerializedName("followers" ) val followers : Strinl
 
 )
