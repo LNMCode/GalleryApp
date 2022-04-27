@@ -1,7 +1,6 @@
 package com.lnmcode.galleryapp.business.datasource.network.helper.topic
 
-import com.lnmcode.galleryapp.business.datasource.network.topic.reponse.Topic
-import com.lnmcode.galleryapp.business.datasource.network.topicphoto.reponse.TopicPhoto
+import com.lnmcode.galleryapp.business.datasource.network.topics.respose.Topics
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -11,5 +10,5 @@ interface TopicApiService {
     suspend fun topicPhoto(
         @Path("id_or_slug") id :String,
         @Query("client_id") key :String
-    ): Topic
+    ): Topics
 }
