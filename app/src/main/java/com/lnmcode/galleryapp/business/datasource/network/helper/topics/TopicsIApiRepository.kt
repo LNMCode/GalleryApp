@@ -1,4 +1,9 @@
 package com.lnmcode.galleryapp.business.datasource.network.helper.topics
 
-class TopicsIApiRepository {
+import com.lnmcode.galleryapp.business.datasource.network.topics.respose.Topics
+
+interface TopicsIApiRepository {
+    suspend fun topics(
+        key :String
+    ) : Topics
 }

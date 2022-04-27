@@ -6,7 +6,7 @@ import com.lnmcode.galleryapp.business.datasource.network.topics.TopicsLinksDto
 import com.lnmcode.galleryapp.business.datasource.network.topics.TopicsOwnersDto
 import com.lnmcode.galleryapp.business.datasource.network.topics.TopicsPreviewPhotosDto
 
-data class topics(
+data class Topics(
     @SerializedName("id"                             ) val id                          : String,
     @SerializedName("slug"                           ) val slug                        : String,
     @SerializedName("title"                          ) val title                       : String,
