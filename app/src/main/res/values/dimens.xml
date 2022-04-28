@@ -6,4 +6,6 @@
     <dimen name="board_size_spacing_bottom_card">10dp</dimen>
     <dimen name="board_padding_title_card">15dp</dimen>
     <dimen name="board_text_title">34sp</dimen>
+    <dimen name="board_space_between_image_card">1dp</dimen>
+    <dimen name="board_corner_radius_card">10dp</dimen>
 </resources>
