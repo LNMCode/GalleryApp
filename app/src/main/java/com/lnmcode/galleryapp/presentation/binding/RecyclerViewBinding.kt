@@ -2,7 +2,7 @@ package com.lnmcode.galleryapp.presentation.binding
 
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.lnmcode.galleryapp.business.datasource.network.topics.respose.Topics
+import com.lnmcode.galleryapp.business.domain.models.topics.Topics
 import com.lnmcode.galleryapp.presentation.adapter.BaseAdapter
 import com.lnmcode.galleryapp.presentation.ui.boards.BoardsAdapter
 

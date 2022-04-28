@@ -20,6 +20,7 @@ class BoardsFragment : BindingFragment<FragmentBoardsBinding>(R.layout.fragment_
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
         return binding {
+            adapter = BoardsAdapter()
             vm = viewModel
         }.root
     }

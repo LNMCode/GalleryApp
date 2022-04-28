@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">GalleryApp</string>
     <string name="database_name">GalleryApp.db</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_boards_screen">Boards</string>
+    <string name="caption_boards_screen">Following galleries to power up your art care</string>
 </resources>

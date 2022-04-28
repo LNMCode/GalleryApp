@@ -2,7 +2,7 @@ package com.lnmcode.galleryapp.presentation.ui.boards
 
 import android.view.View
 import com.lnmcode.galleryapp.R
-import com.lnmcode.galleryapp.business.datasource.network.topics.respose.Topics
+import com.lnmcode.galleryapp.business.domain.models.topics.Topics
 import com.lnmcode.galleryapp.presentation.adapter.BaseAdapter
 import com.lnmcode.galleryapp.presentation.adapter.SectionRow
 import com.lnmcode.galleryapp.presentation.viewholder.BoardViewHolder
