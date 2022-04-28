@@ -15,8 +15,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="5dp"
-        app:cardElevation="3dp"
-        android:padding="0dp">
+        android:padding="0dp"
+        app:cardCornerRadius="@dimen/board_corner_radius_card"
+        app:cardElevation="3dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -27,6 +28,7 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/board_space_between_image_card"
                 app:layout_constraintBottom_toTopOf="@+id/tv_title_card"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintStart_toStartOf="parent"
@@ -38,20 +40,22 @@
                 android:id="@+id/guideline2"
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:background="@color/black"
+                android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.5" />
 
             <ImageView
                 android:id="@+id/img_right_top"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:layout_marginStart="@dimen/board_space_between_image_card"
+                android:layout_marginBottom="@dimen/board_space_between_image_card"
                 android:scaleType="centerCrop"
                 app:layout_constraintBottom_toTopOf="@id/img_right_bottom"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
                 app:layout_constraintTop_toTopOf="@id/img_left"
-                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintVertical_chainStyle="spread_inside"
                 app:loadImage="@{topic.topicsPreviewPhotos.get(1).topicsPreviewPhotoUrls.thumb}"
                 tools:src="@drawable/ic_launcher_background" />
 
@@ -59,10 +63,11 @@
                 android:id="@+id/img_right_bottom"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:layout_marginTop="@dimen/board_space_between_image_card"
                 android:scaleType="centerCrop"
                 app:layout_constraintBottom_toBottomOf="@+id/img_left"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/guideline2"
+                app:layout_constraintStart_toStartOf="@+id/img_right_top"
                 app:layout_constraintTop_toBottomOf="@id/img_right_top"
                 app:loadImage="@{topic.topicsPreviewPhotos.get(2).topicsPreviewPhotoUrls.thumb}"
                 tools:src="@drawable/ic_launcher_background" />
@@ -75,12 +80,12 @@
                 android:layout_marginStart="@dimen/board_size_spacing_bottom_card"
                 android:maxLines="1"
                 android:paddingVertical="@dimen/board_padding_title_card"
+                android:text="@{topic.title}"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/img_icon_card"
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toStartOf="parent"
-                android:text="@{topic.title}"
                 tools:text="pantings" />
 
             <ImageView
