@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="padding_screen">10dp</dimen>
     <dimen name="board_height_card">260dp</dimen>
     <dimen name="board_size_ic_add_card">25dp</dimen>
     <dimen name="board_size_spacing_bottom_card">10dp</dimen>
