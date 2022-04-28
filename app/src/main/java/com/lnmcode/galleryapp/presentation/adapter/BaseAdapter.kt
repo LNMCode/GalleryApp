@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
-import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
@@ -93,7 +92,7 @@ abstract class BaseAdapter : RecyclerView.Adapter<BaseViewHolder>(), LifecycleOb
     }
 
     override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
-        val data = getObjectDataFromPosition(position)
+        val data = objectDataFromPosition(position)
 
         try {
             holder.bindData(data = data)
@@ -106,12 +105,20 @@ abstract class BaseAdapter : RecyclerView.Adapter<BaseViewHolder>(), LifecycleOb
         return layout(sectionRowFromPosition(position))
     }
 
-    protected fun getObjectSectionRow(sectionRow: SectionRow): Any {
+    override fun getItemCount(): Int {
+        var itemCount = 0
+        for (section in sections) {
+            itemCount += section.size
+        }
+        return itemCount
+    }
+
+    protected fun objectFromSectionRow(sectionRow: SectionRow): Any {
         return sections[sectionRow.section][sectionRow.row]
     }
 
-    protected fun getObjectDataFromPosition(position: Int): Any {
-        return getObjectSectionRow(sectionRowFromPosition(position))
+    protected fun objectDataFromPosition(position: Int): Any {
+        return objectFromSectionRow(sectionRowFromPosition(position))
     }
 
     private fun sectionRowFromPosition(position: Int): SectionRow {
