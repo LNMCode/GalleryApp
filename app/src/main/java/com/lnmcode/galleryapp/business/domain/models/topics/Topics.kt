@@ -12,10 +12,10 @@ data class Topics(
     val onlySubmissionsAfter: String,
     val featured: Boolean,
     val totalPhotos: Int,
-    val totalCurrentUserSubmissions: String,
+    val totalCurrentUserSubmissions: String?,
     val topicsLinkDto: TopicsLinks,
     val status: String,
-    val topicsOwnersDto: ArrayList<TopicsOwners>,
+    val topicsOwners: List<TopicsOwners>,
     val topicsCoverPhoto: TopicsCoverPhoto?,
-    val topicsPreviewPhotosDto: ArrayList<TopicsPreviewPhotos>
+    val topicsPreviewPhotos: List<TopicsPreviewPhotos>
 )

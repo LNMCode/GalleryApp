@@ -1,6 +1,9 @@
 package com.lnmcode.galleryapp.business.datasource.network.topics
 
 import com.google.gson.annotations.SerializedName
+import com.lnmcode.galleryapp.business.domain.models.topics.TopicsUserLinks
+import com.lnmcode.galleryapp.business.domain.models.topics.TopicsUserProfileImage
+import com.lnmcode.galleryapp.business.domain.models.topics.TopicsUsers
 
 data class TopicsUsersDto(
     @SerializedName("id"                 ) val id                : String,
@@ -22,4 +25,22 @@ data class TopicsUsersDto(
     @SerializedName("accepted_tos"       ) val acceptedTos       : Boolean,
     @SerializedName("for_hire"           ) val forHire           : Boolean,
 
-)
+    )
+
+fun TopicsUsersDto.toTopicsUsers(): TopicsUsers {
+    return TopicsUsers(
+        id = id,
+        updatedAt = updatedAt,
+        username = username,
+        name = name,
+        firstName = firstName,
+        lastName = lastName,
+        twitterUsername = twitterUsername,
+        portfolioUrl = portfolioUrl,
+        bio = bio,
+        location = location,
+        topicsUserLinks = topicsUserlinksDto.toTopicsUserLinks(),
+        topicsUserProfileImage = topicsUserProfileImageDto.toTopicsUserProfileImage(),
+        instagramUsername, totalCollections, totalLikes, totalPhotos, acceptedTos, forHire
+    )
+}

@@ -4,7 +4,7 @@ data class TopicsCoverPhoto(
     val id: String,
     val createdAt: String,
     val updatedAt: String,
-    val promotedAt: String,
+    val promotedAt: String?,
     val width: Int,
     val height: Int,
     val color: String,
