@@ -1,6 +1,7 @@
 package com.lnmcode.galleryapp.presentation.viewholder
 
 import android.view.View
+import androidx.core.view.ViewCompat
 import com.lnmcode.galleryapp.business.domain.models.topics.Topics
 import com.lnmcode.galleryapp.databinding.LayoutItemBoardsBinding
 import com.lnmcode.galleryapp.presentation.adapter.BaseViewHolder
@@ -25,6 +26,6 @@ class BoardViewHolder(view: View): BaseViewHolder(view) {
     }
 
     override fun onClick(v: View?) {
-        Timber.d("BoardViewItem clicked")
+        Timber.d("BoardViewItem clicked ${data.title}")
     }
 }
