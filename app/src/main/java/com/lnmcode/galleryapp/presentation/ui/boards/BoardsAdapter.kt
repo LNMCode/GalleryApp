@@ -28,8 +28,5 @@ class BoardsAdapter(
 
     override fun layout(sectionRow: SectionRow) = R.layout.layout_item_boards
 
-    override fun viewHolder(layout: Int, view: View) =
-        BoardViewHolder(view) {
-            insertTopicsCache(it)
-        }
+    override fun viewHolder(layout: Int, view: View) = BoardViewHolder(view, insertTopicsCache)
 }
