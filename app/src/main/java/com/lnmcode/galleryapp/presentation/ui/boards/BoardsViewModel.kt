@@ -5,12 +5,14 @@ import androidx.lifecycle.viewModelScope
 import com.lnmcode.galleryapp.bindables.BindingViewModel
 import com.lnmcode.galleryapp.bindables.asBindingProperty
 import com.lnmcode.galleryapp.bindables.bindingProperty
+import com.lnmcode.galleryapp.business.datasource.usecase.TopicsCacheUseCase
 import com.lnmcode.galleryapp.business.domain.models.topics.Topics
 import com.lnmcode.galleryapp.business.datasource.usecase.TopicsUseCase
 import timber.log.Timber
 
 class BoardsViewModel (
-    private val topicsUseCase: TopicsUseCase
+    private val topicsUseCase: TopicsUseCase,
+    private val topicsCacheUseCase: TopicsCacheUseCase,
 ) : BindingViewModel() {
 
     @get:Bindable
