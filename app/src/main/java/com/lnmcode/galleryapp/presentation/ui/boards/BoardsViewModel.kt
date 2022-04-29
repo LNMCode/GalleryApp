@@ -49,6 +49,7 @@ class BoardsViewModel(
         topicsCacheUseCase.insertAndReplace(
             it,
             onSuccess = {
+                onDoneInsertTopicsCacheItem()
                 onRefreshTopicsFromCache()
                 isLoading = true
             }
@@ -56,16 +57,14 @@ class BoardsViewModel(
     }
 
     @get:Bindable
-    private val insertTopicsDomainLong: Long? by insertTopicsDomainFlow.asBindingProperty(
-        viewModelScope,
-        -1
-    )
+    private val insertTopicsDomain by insertTopicsDomainFlow.asBindingProperty(viewModelScope)
 
     private val deleteTopicsDomainStateFlow = MutableStateFlow<TopicsCacheDomain?>(null)
     private val deleteTopicsDomainFlow = deleteTopicsDomainStateFlow.flatMapLatest {
         topicsCacheUseCase.deleteTopics(
             it,
             onSuccess = {
+                onDoneDeleteTopicsCacheItem()
                 onRefreshTopicsFromCache()
                 isLoading = true
             }
@@ -73,16 +72,15 @@ class BoardsViewModel(
     }
 
     @get:Bindable
-    private val deleteTopicsDomainLong: Int? by deleteTopicsDomainFlow.asBindingProperty(
-        viewModelScope,
-        -1
-    )
+    private val deleteTopicsDomain by deleteTopicsDomainFlow.asBindingProperty(viewModelScope)
 
     private var numberCountEvent: Int = -1
 
     fun insertTopicsCache(topicsCacheDomain: TopicsCacheDomain) {
-        Timber.d(topicsCacheDomain.toString())
-        insertTopicsDomainStateFlow.value = topicsCacheDomain
+        if (!topicsCache.contains(topicsCacheDomain)) {
+            Timber.d(topicsCacheDomain.toString())
+            insertTopicsDomainStateFlow.value = topicsCacheDomain
+        }
     }
 
     fun deleteTopicsCache(topicsCacheDomain: TopicsCacheDomain) {
@@ -93,6 +91,14 @@ class BoardsViewModel(
     private fun onRefreshTopicsFromCache() {
         topicsCacheStateFlow.value = numberCountEvent++
         Timber.d("onRefreshTopicsFromCache ${topicsCacheStateFlow.value}")
+    }
+
+    private fun onDoneDeleteTopicsCacheItem() {
+        deleteTopicsDomainStateFlow.value = null
+    }
+
+    private fun onDoneInsertTopicsCacheItem() {
+        insertTopicsDomainStateFlow.value = null
     }
 
     init {

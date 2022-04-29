@@ -35,11 +35,9 @@ object RecyclerViewBinding {
         view: RecyclerView,
         topics: List<TopicsCacheDomain>,
     ) {
-        if (!topics.isNullOrEmpty()) {
-            val boardTopicsAdapter = view.adapter as BoardTopicsAdapter
-            boardTopicsAdapter.addTopics(topics)
-            view.adapter = boardTopicsAdapter
-        }
+        val boardTopicsAdapter = view.adapter as BoardTopicsAdapter
+        boardTopicsAdapter.addTopics(topics)
+        view.adapter = boardTopicsAdapter
     }
 
 }
