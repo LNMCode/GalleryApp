@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-class TopicEntities(
+class TopicsEntities(
 
     @PrimaryKey val id: Long,
 )

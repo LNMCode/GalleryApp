@@ -2,12 +2,12 @@ package com.lnmcode.galleryapp.business.datasource.cache
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.lnmcode.galleryapp.business.datasource.cache.topic.TopicDao
-import com.lnmcode.galleryapp.business.datasource.cache.topic.TopicEntities
+import com.lnmcode.galleryapp.business.datasource.cache.topic.TopicsDao
+import com.lnmcode.galleryapp.business.datasource.cache.topic.TopicsEntities
 
-@Database(entities = [TopicEntities::class], version = 1, exportSchema = true)
+@Database(entities = [TopicsEntities::class], version = 1, exportSchema = true)
 abstract class AppDatabase: RoomDatabase() {
 
-    abstract fun topicDao(): TopicDao
+    abstract fun topicDao(): TopicsDao
 
 }
