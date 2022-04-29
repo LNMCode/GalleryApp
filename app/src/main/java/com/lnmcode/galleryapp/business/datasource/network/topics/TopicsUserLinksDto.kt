@@ -1,6 +1,7 @@
 package com.lnmcode.galleryapp.business.datasource.network.topics
 
 import com.google.gson.annotations.SerializedName
+import com.lnmcode.galleryapp.business.domain.models.topics.TopicsUserLinks
 
 data class TopicsUserLinksDto(
     @SerializedName("self"      ) val self      : String,
@@ -12,3 +13,9 @@ data class TopicsUserLinksDto(
     @SerializedName("followers" ) val followers : String,
 
 )
+
+fun TopicsUserLinksDto.toTopicsUserLinks(): TopicsUserLinks {
+    return TopicsUserLinks(
+       self, html, photos, likes, portfolio, following, followers
+    )
+}

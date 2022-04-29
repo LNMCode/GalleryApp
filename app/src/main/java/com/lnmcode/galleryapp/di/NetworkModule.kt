@@ -15,6 +15,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 val networkModule = module {
 
     single(named(Constants.BASE_URL_API_NAME)) { baseUrlString() }
+    single(named(Constants.KEY_API_URL_NAME)) { keyAPIUrl() }
 
     single { RequestInterceptor() }
 
@@ -55,4 +56,8 @@ internal fun retrofitBuilder(
 
 internal fun baseUrlString(): String {
     return "https://api.unsplash.com/"
+}
+
+internal fun keyAPIUrl(): String {
+    return "5IFGi9p0CqcZxupJ1ZV9ZUAoXddSBuRGYMW2cjKEvv8"
 }

@@ -7,18 +7,19 @@ import com.lnmcode.galleryapp.business.datasource.network.helper.topic.TopicApiR
 import com.lnmcode.galleryapp.business.datasource.network.helper.topicphoto.TopicPhotoApiRepositoryImpl
 import com.lnmcode.galleryapp.business.datasource.network.helper.topicphoto.TopicPhotoIApiRepository
 import com.lnmcode.galleryapp.business.datasource.network.helper.topics.TopicsApiRepositoryImpl
+import com.lnmcode.galleryapp.business.datasource.network.helper.topics.TopicsIApiRepository
 import org.koin.dsl.bind
 import org.koin.dsl.module
 
 val repositoryModel = module {
 
     // Search repository
-    single { SearchApiRepositoryImpl(get()) } bind SearchApiRepository::class
+    single<SearchApiRepository> { SearchApiRepositoryImpl(get()) }
 
     // Topic repository
-    single { TopicApiRepositoryImpl(get()) } bind TopicApiRepository::class
+    single<TopicApiRepository> { TopicApiRepositoryImpl(get()) }
 
-    single { TopicPhotoApiRepositoryImpl(get()) } bind TopicPhotoIApiRepository::class
+    single<TopicPhotoIApiRepository> { TopicPhotoApiRepositoryImpl(get()) }
 
-    single { TopicsApiRepositoryImpl(get()) } bind TopicsApiRepositoryImpl::class
+    single<TopicsIApiRepository> { TopicsApiRepositoryImpl(get()) }
 }
