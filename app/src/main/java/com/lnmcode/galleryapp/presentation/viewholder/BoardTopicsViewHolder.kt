@@ -8,7 +8,8 @@ import timber.log.Timber
 
 class BoardTopicsViewHolder(
     view: View,
-) : BaseViewHolder(view){
+    private val deleteTopicsCache: (TopicsCacheDomain) -> Unit,
+) : BaseViewHolder(view) {
     private lateinit var data: TopicsCacheDomain
     private val binding: LayoutItemTopicsBoardsBinding by bindings()
 
@@ -22,6 +23,15 @@ class BoardTopicsViewHolder(
     private fun setUpLayout() {
         binding.apply {
             topics = data
+            imgIconRemove.setOnClickListener {
+                val topicsData = TopicsCacheDomain(
+                    id = data.id,
+                    slug = data.slug,
+                    title = data.title,
+                    description = data.description
+                )
+                deleteTopicsCache(topicsData)
+            }
         }
     }
 

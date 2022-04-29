@@ -17,4 +17,8 @@ class TopicsCacheRepositoryImpl constructor(
     override suspend fun insertAndReplace(topicsEntities: TopicsEntities): Long {
         return topicsDao.insertAndReplace(topicsEntities)
     }
+
+    override suspend fun deleteTopics(topicsEntities: TopicsEntities): Int {
+        return topicsDao.deleteTopics(topicsEntities)
+    }
 }

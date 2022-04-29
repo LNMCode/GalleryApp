@@ -12,4 +12,8 @@ interface TopicsCacheRepository {
     suspend fun insertAndReplace(
         topicsEntities: TopicsEntities
     ): Long
+
+    suspend fun deleteTopics(
+        topicsEntities: TopicsEntities
+    ): Int
 }

@@ -1,9 +1,6 @@
 package com.lnmcode.galleryapp.business.datasource.cache.topics
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 
 @Dao
 interface TopicsDao {
@@ -17,4 +14,6 @@ interface TopicsDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAndReplace(topicsEntities: TopicsEntities): Long
 
+    @Delete
+    suspend fun deleteTopics(topicsEntities: TopicsEntities): Int
 }

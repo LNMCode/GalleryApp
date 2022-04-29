@@ -8,7 +8,9 @@ import com.lnmcode.galleryapp.presentation.adapter.BaseViewHolder
 import com.lnmcode.galleryapp.presentation.adapter.SectionRow
 import com.lnmcode.galleryapp.presentation.viewholder.BoardTopicsViewHolder
 
-class BoardTopicsAdapter : BaseAdapter() {
+class BoardTopicsAdapter(
+    private val deleteTopicsCache: (topicsCacheDomain: TopicsCacheDomain) -> Unit,
+) : BaseAdapter() {
 
     init {
         addSection(arrayListOf<TopicsCacheDomain>())
@@ -23,5 +25,5 @@ class BoardTopicsAdapter : BaseAdapter() {
     }
 
     override fun layout(sectionRow: SectionRow): Int = R.layout.layout_item_topics_boards
-    override fun viewHolder(layout: Int, view: View) = BoardTopicsViewHolder(view)
+    override fun viewHolder(layout: Int, view: View) = BoardTopicsViewHolder(view, deleteTopicsCache)
 }

@@ -49,4 +49,16 @@ class TopicsCacheUseCase(
     }.onCompletion { onSuccess() }.flowOn(Dispatchers.IO).catch { e ->
         Timber.e(e.message)
     }
+
+    @WorkerThread
+    fun deleteTopics(
+        topicsCacheDomain: TopicsCacheDomain?,
+        onSuccess: () -> Unit,
+    ) = flow {
+        val topicsEntities = topicsCacheDomain?.toEntity()
+        val longInsert = topicsEntities?.let { topicsCacheRepository.deleteTopics(it) }
+        emit(longInsert)
+    }.onCompletion { onSuccess() }.flowOn(Dispatchers.IO).catch { e ->
+        Timber.e(e.message)
+    }
 }
