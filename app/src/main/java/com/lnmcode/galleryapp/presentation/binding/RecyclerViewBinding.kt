@@ -2,8 +2,10 @@ package com.lnmcode.galleryapp.presentation.binding
 
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.lnmcode.galleryapp.business.domain.cache.TopicsCacheDomain
 import com.lnmcode.galleryapp.business.domain.models.topics.Topics
 import com.lnmcode.galleryapp.presentation.adapter.BaseAdapter
+import com.lnmcode.galleryapp.presentation.ui.boards.BoardTopicsAdapter
 import com.lnmcode.galleryapp.presentation.ui.boards.BoardsAdapter
 
 object RecyclerViewBinding {
@@ -16,11 +18,27 @@ object RecyclerViewBinding {
 
     @JvmStatic
     @BindingAdapter("adapterTopicsList")
-    fun bindAdapterPosterList(view: RecyclerView, topics: List<Topics>?) {
+    fun bindAdapterPosterList(
+        view: RecyclerView,
+        topics: List<Topics>?,
+    ) {
         if (!topics.isNullOrEmpty()) {
-            val boardsAdapter = BoardsAdapter()
+            val boardsAdapter = view.adapter as BoardsAdapter
             boardsAdapter.addTopics(topics)
             view.adapter = boardsAdapter
+        }
+    }
+
+    @JvmStatic
+    @BindingAdapter("adapterTopicsCache")
+    fun bindAdapterTopicsCache(
+        view: RecyclerView,
+        topics: List<TopicsCacheDomain>,
+    ) {
+        if (!topics.isNullOrEmpty()) {
+            val boardTopicsAdapter = view.adapter as BoardTopicsAdapter
+            boardTopicsAdapter.addTopics(topics)
+            view.adapter = boardTopicsAdapter
         }
     }
 
