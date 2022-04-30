@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="vm"
+            type="com.lnmcode.galleryapp.presentation.ui.gallery.GalleryViewModel" />
+        <variable
+            name="adapter"
+            type="com.lnmcode.galleryapp.presentation.ui.gallery.GalleryAdapter" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginHorizontal="10dp"
+        android:paddingVertical="5dp"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content">
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_item_gallery"
+            android:layout_width="180dp"
+            android:layout_height="100dp"
+            android:elevation="2dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <ImageView
+                android:id="@+id/img_item_topGallery"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/boder_image_itemgallery"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_background">
+            </ImageView>
+        </com.google.android.material.card.MaterialCardView>
+        <TextView
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="Wall arts"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintBaseline_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_item_gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</layout>

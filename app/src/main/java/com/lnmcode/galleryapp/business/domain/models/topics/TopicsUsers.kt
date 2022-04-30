@@ -1,5 +1,9 @@
 package com.lnmcode.galleryapp.business.domain.models.topics
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class TopicsUsers(
     val id: String,
     val updatedAt: String,
@@ -19,4 +23,4 @@ data class TopicsUsers(
     val totalPhotos: Int,
     val acceptedTos: Boolean,
     val forHire: Boolean,
-)
+): Parcelable

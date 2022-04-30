@@ -16,5 +16,5 @@ val useCaseModule = module {
 
     factory { TopicsUseCase(get(qualifier = named(Constants.KEY_API_URL_NAME)), get()) }
 
-    single { TopicUseCase(get()) }
+    single { TopicUseCase(get(),get()) }
 }

@@ -43,5 +43,4 @@ fun TopicDto.toTopicDomain() : Topic {
         topContributors= topContributorsDto?.map { it.toTopicTopContributors() },
         topicCoverPhoto= topicCoverPhotoDto?.toTopicCoverPhoto()
     )
-
 }

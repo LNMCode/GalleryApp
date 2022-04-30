@@ -16,7 +16,6 @@ class TopicsUseCase constructor(
     init {
         Timber.d("Injection TopicsUserCase")
     }
-
     @WorkerThread
     fun getTopics(
         onSuccess: () -> Unit,

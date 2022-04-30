@@ -12,20 +12,18 @@ import timber.log.Timber
 class BoardsViewModel (
     private val topicsUseCase: TopicsUseCase
 ) : BindingViewModel() {
-
     @get:Bindable
     var isLoading: Boolean by bindingProperty(true)
         private set
-
     private val topicsFlow = topicsUseCase.getTopics(
         onSuccess = { isLoading = true }
     )
-
     @get:Bindable
     val topics: List<Topics> by topicsFlow.asBindingProperty(viewModelScope, emptyList())
 
     init {
         Timber.d("Init Boards View model")
+
     }
 
 }

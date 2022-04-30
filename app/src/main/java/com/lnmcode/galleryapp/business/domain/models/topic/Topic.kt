@@ -1,11 +1,4 @@
 package com.lnmcode.galleryapp.business.domain.models.topic
-
-import com.google.gson.annotations.SerializedName
-import com.lnmcode.galleryapp.business.datasource.network.topic.TopicCoverPhotoDto
-import com.lnmcode.galleryapp.business.datasource.network.topic.TopicLinksDto
-import com.lnmcode.galleryapp.business.datasource.network.topic.TopicOwnersDto
-import com.lnmcode.galleryapp.business.datasource.network.topic.TopicTopContributorsDto
-
 data class Topic(
    val id                          : String?,
    val slug                        : String?,
