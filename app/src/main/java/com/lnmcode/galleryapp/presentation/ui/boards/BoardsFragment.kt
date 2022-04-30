@@ -20,7 +20,8 @@ class BoardsFragment : BindingFragment<FragmentBoardsBinding>(R.layout.fragment_
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
         return binding {
-            adapter = BoardsAdapter()
+            adapter = BoardsAdapter { viewModel.insertTopicsCache(it) }
+            adapterTopics = BoardTopicsAdapter { viewModel.deleteTopicsCache(it) }
             vm = viewModel
         }.root
     }

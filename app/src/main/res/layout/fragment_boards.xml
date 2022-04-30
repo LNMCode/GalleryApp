@@ -13,6 +13,9 @@
             name="adapter"
             type="com.lnmcode.galleryapp.presentation.ui.boards.BoardsAdapter" />
 
+        <variable
+            name="adapterTopics"
+            type="com.lnmcode.galleryapp.presentation.ui.boards.BoardTopicsAdapter" />
     </data>
 
     <androidx.core.widget.NestedScrollView
@@ -24,13 +27,13 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/padding_screen"
-            android:paddingTop="@dimen/padding_screen">
+            android:paddingTop="@dimen/margin_screen">
 
             <TextView
                 android:id="@+id/tv_title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_screen"
                 android:fontFamily="@font/font_tt_norms"
                 android:paddingVertical="@dimen/padding_vertical_title_screen"
                 android:text="@string/title_boards_screen"
@@ -44,28 +47,46 @@
                 android:id="@+id/tv_caption"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_screen"
                 android:fontFamily="@font/font_tt_norms"
                 android:paddingVertical="@dimen/padding_vertical_caption_screen"
-                android:paddingStart="2dp"
                 android:text="@string/caption_boards_screen"
-                app:layout_constraintStart_toStartOf="@+id/tv_title"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewTopics"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/board_padding_vertical_list_topics_cache"
+                android:paddingStart="@dimen/margin_screen"
+                app:adapter="@{adapterTopics}"
+                app:adapterTopicsCache="@{vm.topicsCache}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_caption"
+                tools:listitem="@layout/layout_item_topics_boards" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_screen"
                 android:clipToPadding="false"
                 android:nestedScrollingEnabled="false"
                 android:orientation="vertical"
-                android:padding="4dp"
+                android:paddingHorizontal="@dimen/board_spacing_container_card"
                 app:adapter="@{adapter}"
                 app:adapterTopicsList="@{vm.topics}"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_caption"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerViewTopics"
                 tools:listitem="@layout/layout_item_boards" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,7 +11,7 @@ val persistenceModule = module {
 
     single { roomDatabaseBuilder(androidApplication()) }
 
-    //single { get<AppDatabase>().posterDao() }
+    single { get<AppDatabase>().topicsDao() }
 
 }
 

@@ -21,9 +21,7 @@ class TopicsUseCase constructor(
         onSuccess: () -> Unit,
     ): Flow<List<Topics>> = flow {
         val topics = topicsIApiRepository.topics(key = keyAPI).map { it.toTopicsDomain() }
-
-        emit( topics)
-
+        emit(topics)
     }.onCompletion { onSuccess() }.flowOn(Dispatchers.IO).catch { e ->
         Timber.e(e.message)
     }
