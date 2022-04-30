@@ -12,7 +12,7 @@ object RecyclerViewBinding {
 
     @JvmStatic
     @BindingAdapter("adapter")
-    fun bindAdapter(view: RecyclerView, baseAdapter: BaseAdapter) {
+    fun bindAdapter(view: RecyclerView, baseAdapter: BaseAdapter<Any>) {
         view.adapter = baseAdapter
     }
 
@@ -25,7 +25,6 @@ object RecyclerViewBinding {
         if (!topics.isNullOrEmpty()) {
             val boardsAdapter = view.adapter as BoardsAdapter
             boardsAdapter.addTopics(topics)
-            view.adapter = boardsAdapter
         }
     }
 
@@ -37,7 +36,6 @@ object RecyclerViewBinding {
     ) {
         val boardTopicsAdapter = view.adapter as BoardTopicsAdapter
         boardTopicsAdapter.addTopics(topics)
-        view.adapter = boardTopicsAdapter
     }
 
 }

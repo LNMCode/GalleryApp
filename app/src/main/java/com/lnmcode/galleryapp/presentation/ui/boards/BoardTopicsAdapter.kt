@@ -10,20 +10,31 @@ import com.lnmcode.galleryapp.presentation.viewholder.BoardTopicsViewHolder
 
 class BoardTopicsAdapter(
     private val deleteTopicsCache: (topicsCacheDomain: TopicsCacheDomain) -> Unit,
-) : BaseAdapter() {
+) : BaseAdapter<TopicsCacheDomain>() {
 
     init {
-        addSection(arrayListOf<TopicsCacheDomain>())
+        addSubmit(listOf())
     }
 
     fun addTopics(topics: List<TopicsCacheDomain>) {
-        sections().first().run {
-            clear()
-            addAll(topics)
-            notifyDataSetChanged()
-        }
+        addSubmit(topics)
     }
 
-    override fun layout(sectionRow: SectionRow): Int = R.layout.layout_item_topics_boards
-    override fun viewHolder(layout: Int, view: View) = BoardTopicsViewHolder(view, deleteTopicsCache)
+    override fun layout() = R.layout.layout_item_topics_boards
+
+    override fun viewHolder(view: View) = BoardTopicsViewHolder(view, deleteTopicsCache)
+
+    override fun areItemsTheSameItem(
+        oldItem: TopicsCacheDomain,
+        newItem: TopicsCacheDomain
+    ): Boolean {
+        return oldItem.id == newItem.id
+    }
+
+    override fun areContentsTheSameItem(
+        oldItem: TopicsCacheDomain,
+        newItem: TopicsCacheDomain
+    ): Boolean {
+        return oldItem.id == newItem.id
+    }
 }
