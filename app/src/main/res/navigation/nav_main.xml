@@ -24,10 +24,6 @@
         android:id="@+id/galleryFragment"
         android:name="com.lnmcode.galleryapp.presentation.ui.gallery.GalleryFragment"
         android:label="GalleryFragment" >
-        <action
-            android:id="@+id/action_galleryFragment_to_boardsFragment"
-            app:destination="@id/boardsFragment" >
-       </action>
         <argument
               android:name="topicsdata"
                app:argType="com.lnmcode.galleryapp.business.domain.models.topics">
