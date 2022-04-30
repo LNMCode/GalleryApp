@@ -2,5 +2,9 @@
     <string name="app_name">GalleryApp</string>
     <string name="database_name">GalleryApp.db</string>
     <string name="title_boards_screen">Boards</string>
+    <string name ="title_gallery_screen">Gallery</string>
+    <string name="caption_gallery_screen">Curated Gallery</string>
     <string name="caption_boards_screen">Following galleries to power up your art care</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

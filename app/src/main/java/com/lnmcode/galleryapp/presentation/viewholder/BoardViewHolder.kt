@@ -23,7 +23,6 @@ class BoardViewHolder(
             setUpLayout()
         }
     }
-
     private fun setUpLayout() {
         binding.apply {
             topic = data

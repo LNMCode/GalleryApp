@@ -1,5 +1,9 @@
 package com.lnmcode.galleryapp.business.domain.models.topics
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class TopicsUserLinks(
     val self: String,
     val html: String,
@@ -8,4 +12,4 @@ data class TopicsUserLinks(
     val portfolio: String,
     val following: String,
     val followers: String,
-)
+): Parcelable

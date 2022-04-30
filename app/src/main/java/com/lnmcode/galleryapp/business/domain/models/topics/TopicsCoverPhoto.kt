@@ -1,5 +1,9 @@
 package com.lnmcode.galleryapp.business.domain.models.topics
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class TopicsCoverPhoto(
     val id: String,
     val createdAt: String,
@@ -17,4 +21,4 @@ data class TopicsCoverPhoto(
     val likedByUser: Boolean,
     val sponsorship: String?,
     val topicsUser: TopicsUsers
-)
+) :Parcelable
