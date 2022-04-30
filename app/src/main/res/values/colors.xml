@@ -9,4 +9,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="background_screen_color">#F0F4F4</color>
+    <color name="start_color_bg_topics_cache">#FC5C4C</color>
+    <color name="end_color_bg_topics_cache">#FD814A</color>
 </resources>

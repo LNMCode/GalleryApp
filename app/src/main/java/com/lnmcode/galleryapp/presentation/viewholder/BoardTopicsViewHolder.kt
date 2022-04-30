@@ -1,24 +1,20 @@
 package com.lnmcode.galleryapp.presentation.viewholder
 
 import android.view.View
-import androidx.core.view.ViewCompat
-import com.lnmcode.galleryapp.business.datasource.cache.topics.TopicsEntities
 import com.lnmcode.galleryapp.business.domain.cache.TopicsCacheDomain
-import com.lnmcode.galleryapp.business.domain.models.topics.Topics
-import com.lnmcode.galleryapp.databinding.LayoutItemBoardsBinding
+import com.lnmcode.galleryapp.databinding.LayoutItemTopicsBoardsBinding
 import com.lnmcode.galleryapp.presentation.adapter.BaseViewHolder
 import timber.log.Timber
 
-class BoardViewHolder(
+class BoardTopicsViewHolder(
     view: View,
-    private val insertTopicsCache: (TopicsCacheDomain) -> Unit,
+    private val deleteTopicsCache: (TopicsCacheDomain) -> Unit,
 ) : BaseViewHolder(view) {
-
-    private lateinit var data: Topics
-    private val binding: LayoutItemBoardsBinding by bindings()
+    private lateinit var data: TopicsCacheDomain
+    private val binding: LayoutItemTopicsBoardsBinding by bindings()
 
     override fun bindData(data: Any) {
-        if (data is Topics) {
+        if (data is TopicsCacheDomain) {
             this.data = data
             setUpLayout()
         }
@@ -26,20 +22,20 @@ class BoardViewHolder(
 
     private fun setUpLayout() {
         binding.apply {
-            topic = data
-            imgIconCard.setOnClickListener {
+            topics = data
+            imgIconRemove.setOnClickListener {
                 val topicsData = TopicsCacheDomain(
                     id = data.id,
                     slug = data.slug,
                     title = data.title,
                     description = data.description
                 )
-                insertTopicsCache(topicsData)
+                deleteTopicsCache(topicsData)
             }
         }
     }
 
     override fun onClick(v: View?) {
-        Timber.d("BoardViewItem clicked ${data.title}")
+        Timber.d("BoardTopicsViewHolder clicked: ${data.title}")
     }
 }
