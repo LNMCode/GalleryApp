@@ -22,6 +22,7 @@ val repositoryModel = module {
     // Topic repository
     single<TopicApiRepository> { TopicApiRepositoryImpl(get()) }
 
+
     single<TopicPhotoIApiRepository> { TopicPhotoApiRepositoryImpl(get()) }
 
     single<TopicsIApiRepository> { TopicsApiRepositoryImpl(get()) }

@@ -10,11 +10,11 @@ val useCaseModule = module {
     // UseCase network
     single { SearchUseCase(get()) }
 
-    single { TopicPhotoUseCase(get()) }
+    single { TopicPhotoUseCase(get(qualifier = named(Constants.KEY_API_URL_NAME)),get()) }
 
     factory { TopicsUseCase(get(qualifier = named(Constants.KEY_API_URL_NAME)), get()) }
 
-    single { TopicUseCase(get()) }
+    single { TopicUseCase(get(qualifier = named(Constants.KEY_API_URL_NAME)),get()) }
 
     // UseCase cache
     single { TopicsCacheUseCase(get()) }

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="topicPhoto"
+            type="com.lnmcode.galleryapp.business.domain.models.topicphoto.TopicPhoto" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginHorizontal="10dp"
+        android:paddingVertical="5dp"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content">
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_item_gallery"
+            android:layout_width="180dp"
+            android:layout_height="100dp"
+            android:elevation="2dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <ImageView
+                app:loadImage="@{topicPhoto.topicPhotoUrls.regular}"
+                android:id="@+id/img_item_topGallery"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/boder_image_itemgallery"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_background">
+            </ImageView>
+        </com.google.android.material.card.MaterialCardView>
+        <TextView
+            android:textColor="@color/black"
+            android:text="@{topicPhoto.promotedAt}"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintBaseline_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_item_gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

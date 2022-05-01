@@ -17,18 +17,16 @@ class BoardsViewModel(
     private val topicsUseCase: TopicsUseCase,
     private val topicsCacheUseCase: TopicsCacheUseCase,
 ) : BindingViewModel() {
-
     @get:Bindable
     var isLoading: Boolean by bindingProperty(true)
         private set
-
     private val topicsFlow = topicsUseCase.getTopics(
         onSuccess = { isLoading = true }
     )
 
+
     @get:Bindable
     val topics: List<Topics> by topicsFlow.asBindingProperty(viewModelScope, emptyList())
-
     private val topicsCacheStateFlow = MutableStateFlow(0)
     private val topicsCacheFlow = topicsCacheStateFlow.flatMapLatest {
         topicsCacheUseCase.getTopics(
@@ -103,6 +101,7 @@ class BoardsViewModel(
 
     init {
         Timber.d("Init Boards View model")
+
     }
 
 }
