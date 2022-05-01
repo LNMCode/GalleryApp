@@ -14,20 +14,16 @@
         android:id="@+id/boardsFragment"
         android:name="com.lnmcode.galleryapp.presentation.ui.boards.BoardsFragment"
         android:label="BoardsFragment"
-        tools:layout="@layout/fragment_boards" >
-        <action
-            android:id="@+id/action_boardsFragment_to_galleryFragment"
-            app:destination="@id/galleryFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_boards" />
     <fragment
         tools:layout="@layout/fragment_gallery"
         android:id="@+id/galleryFragment"
         android:name="com.lnmcode.galleryapp.presentation.ui.gallery.GalleryFragment"
         android:label="GalleryFragment" >
-        <argument
-              android:name="topicsdata"
-               app:argType="com.lnmcode.galleryapp.business.domain.models.topics">
-       </argument>
+<!--        <argument-->
+<!--              android:name="topicsdata"-->
+<!--               app:argType="com.lnmcode.galleryapp.business.domain.models.topics">-->
+<!--       </argument>-->
 
     </fragment>
 
