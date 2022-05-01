@@ -15,4 +15,8 @@
     <dimen name="board_size_spacing_between_eles_item_topics_cache">10dp</dimen>
     <dimen name="board_size_spacing_between_topics_cache">8dp</dimen>
     <dimen name="board_size_ic_close_topics_cache">12dp</dimen>
+    <dimen name="detail_size_ic_pend">15dp</dimen>
+    <dimen name="detail_size_text_title">15sp</dimen>
+    <dimen name="detail_size_text_normal">17sp</dimen>
+    <dimen name="detail_size_spacing_between_pend">6dp</dimen>
 </resources>

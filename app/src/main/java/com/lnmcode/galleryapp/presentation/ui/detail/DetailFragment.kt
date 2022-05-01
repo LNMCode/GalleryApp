@@ -4,10 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import androidx.fragment.app.Fragment
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.lnmcode.galleryapp.R
 import com.lnmcode.galleryapp.bindables.BindingFragment
 import com.lnmcode.galleryapp.databinding.FragmentDetailBinding
@@ -23,16 +20,14 @@ class DetailFragment : BindingFragment<FragmentDetailBinding>(R.layout.fragment_
         savedInstanceState: Bundle?
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
-        return binding {
-
-        }.root
+        return binding {}.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding {
             bottomSheetBehavior = getBottomSheetBehavior(bottomSheet)
-            showBottomSheet.setOnClickListener {
+            textView2.setOnClickListener {
                 showAndHideBottomSheet()
             }
         }
