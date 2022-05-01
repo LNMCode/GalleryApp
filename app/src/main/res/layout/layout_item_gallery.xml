@@ -4,11 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
-            name="vm"
-            type="com.lnmcode.galleryapp.presentation.ui.gallery.GalleryViewModel" />
-        <variable
-            name="adapter"
-            type="com.lnmcode.galleryapp.presentation.ui.gallery.GalleryAdapter" />
+            name="topicPhoto"
+            type="com.lnmcode.galleryapp.business.domain.models.topicphoto.TopicPhoto" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_marginHorizontal="10dp"
@@ -25,6 +22,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
             <ImageView
+                app:loadImage="@{topicPhoto.topicPhotoUrls.regular}"
                 android:id="@+id/img_item_topGallery"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -34,9 +32,10 @@
             </ImageView>
         </com.google.android.material.card.MaterialCardView>
         <TextView
+            android:textColor="@color/black"
+            android:text="@{topicPhoto.promotedAt}"
             android:textStyle="bold"
             android:textSize="20dp"
-            android:text="Wall arts"
             app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintBaseline_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -47,10 +46,6 @@
 
         </TextView>
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 
 </layout>

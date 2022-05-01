@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
-
         <variable
             name="vm"
             type="com.lnmcode.galleryapp.presentation.ui.gallery.GalleryViewModel" />
@@ -9,6 +9,9 @@
         <variable
             name="adapter"
             type="com.lnmcode.galleryapp.presentation.ui.gallery.GalleryAdapter" />
+        <variable
+            name="topicPhoto"
+            type="com.lnmcode.galleryapp.business.domain.models.topicphoto.TopicPhoto" />
 
     </data>
 <androidx.core.widget.NestedScrollView
@@ -49,6 +52,7 @@
        <androidx.recyclerview.widget.RecyclerView
            tools:listitem="@layout/layout_item_gallery"
            app:adapter="@{adapter}"
+           app:adapterTopicPhoto="@{vm.topicPhoto}"
            android:orientation="horizontal"
            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
            android:id="@+id/recyclerview_top_gallery"
@@ -62,6 +66,8 @@
        </androidx.recyclerview.widget.RecyclerView>
 
        <androidx.recyclerview.widget.RecyclerView
+           app:adapter="@{adapter}"
+           app:adapterTopicPhoto="@{vm.topicPhoto}"
            tools:listitem="@layout/layout_item_gridview_gallery"
            app:spanCount="2"
            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
