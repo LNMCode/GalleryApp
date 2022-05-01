@@ -9,43 +9,54 @@ import com.lnmcode.galleryapp.presentation.adapter.BaseAdapter
 import com.lnmcode.galleryapp.presentation.ui.boards.BoardTopicsAdapter
 import com.lnmcode.galleryapp.presentation.ui.boards.BoardsAdapter
 import com.lnmcode.galleryapp.presentation.ui.gallery.GalleryAdapter
+import com.lnmcode.galleryapp.presentation.ui.gallery.GalleryHeadAdapter
 
 object RecyclerViewBinding {
 
     @JvmStatic
-    @BindingAdapter("adapter")
-    fun bindAdapter(view: RecyclerView, baseAdapter: BaseAdapter<Any>) {
-        view.adapter = baseAdapter
-    }
-    @JvmStatic
-    @BindingAdapter("adapterTopicsList")
+    @BindingAdapter("adapter", "adapterTopicsList")
     fun bindAdapterPosterList(
         view: RecyclerView,
+        adapter: BoardsAdapter,
         topics: List<Topics>?,
     ) {
         if (!topics.isNullOrEmpty()) {
-            val boardsAdapter = view.adapter as BoardsAdapter
-            boardsAdapter.addTopics(topics)
+            adapter.addTopics(topics)
+            view.adapter = adapter
         }
     }
 
     @JvmStatic
-    @BindingAdapter("adapterTopicsCache")
+    @BindingAdapter("adapter", "adapterTopicsCache")
     fun bindAdapterTopicsCache(
         view: RecyclerView,
+        adapter: BoardTopicsAdapter,
         topics: List<TopicsCacheDomain>,
     ) {
-        val boardTopicsAdapter = view.adapter as BoardTopicsAdapter
-        boardTopicsAdapter.addTopics(topics)
+        adapter.addTopics(topics)
+        view.adapter = adapter
     }
+
     @JvmStatic
-    @BindingAdapter("adapterTopicPhoto")
+    @BindingAdapter("adapter", "adapterTopicPhoto")
     fun bindAdapterTopicPhoto(
         view: RecyclerView,
+        adapter: GalleryHeadAdapter,
         topicPhoto: List<TopicPhoto>,
     ) {
-        val galleryAdapter = view.adapter as GalleryAdapter
-       galleryAdapter.addTopics(topicPhoto)
+        adapter.addTopics(topicPhoto)
+        view.adapter = adapter
+    }
+
+    @JvmStatic
+    @BindingAdapter("adapter", "adapterGridTopicPhoto")
+    fun bindAdapterGridTopicPhoto(
+        view: RecyclerView,
+        adapter: GalleryAdapter,
+        topicPhoto: List<TopicPhoto>,
+    ) {
+        adapter.addTopics(topicPhoto)
+        view.adapter = adapter
     }
 
 }
