@@ -5,7 +5,7 @@ import com.lnmcode.galleryapp.business.datasource.network.topicphoto.*
 import com.lnmcode.galleryapp.business.domain.models.topicphoto.TopicPhoto
 
 data class TopicPhotoResponse(
-    @SerializedName("id") val id: String?,
+    @SerializedName("id") val id: String,
     @SerializedName("created_at") val createdAt : String?,
     @SerializedName("updated_at") val updatedAt : String?,
     @SerializedName("promoted_at")val promotedAt : String?,

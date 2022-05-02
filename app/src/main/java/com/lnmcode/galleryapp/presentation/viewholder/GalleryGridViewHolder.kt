@@ -1,7 +1,7 @@
 package com.lnmcode.galleryapp.presentation.viewholder
 
-import android.util.Log
 import android.view.View
+import androidx.core.view.ViewCompat
 import com.lnmcode.galleryapp.business.domain.models.topicphoto.TopicPhoto
 import com.lnmcode.galleryapp.databinding.LayoutItemGridviewGalleryBinding
 import com.lnmcode.galleryapp.presentation.adapter.BaseViewHolder
@@ -31,6 +31,6 @@ class GalleryGridViewHolder(
 
     override fun onClick(v: View?) {
         Timber.d("GalleryGridViewHolder clicked item ${data.id}")
-        onChangeLayout.onChangeWithParameters(data)
+        onChangeLayout.onChangeSharedWithParameters(data, binding.image)
     }
 }

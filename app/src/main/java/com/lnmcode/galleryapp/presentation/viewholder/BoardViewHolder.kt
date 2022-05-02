@@ -1,8 +1,6 @@
 package com.lnmcode.galleryapp.presentation.viewholder
 
 import android.view.View
-import androidx.core.view.ViewCompat
-import com.lnmcode.galleryapp.business.datasource.cache.topics.TopicsEntities
 import com.lnmcode.galleryapp.business.domain.cache.TopicsCacheDomain
 import com.lnmcode.galleryapp.business.domain.models.topics.Topics
 import com.lnmcode.galleryapp.databinding.LayoutItemBoardsBinding

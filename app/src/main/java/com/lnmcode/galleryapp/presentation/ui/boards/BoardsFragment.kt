@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.navigation.fragment.findNavController
 import com.lnmcode.galleryapp.R
 import com.lnmcode.galleryapp.bindables.BindingFragment
@@ -31,6 +32,10 @@ class BoardsFragment(
             adapterTopics = BoardTopicsAdapter(this@BoardsFragment)
             vm = viewModel
         }.root
+    }
+
+    override fun onChangeSharedWithParameters(data: Any, viewItemShare: ImageView) {
+
     }
 
     override fun onChangeWithParameters(data: Any) {
