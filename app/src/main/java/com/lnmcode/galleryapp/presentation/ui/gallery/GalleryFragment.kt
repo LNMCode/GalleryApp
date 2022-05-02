@@ -13,6 +13,9 @@ import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.transition.TransitionInflater
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.lnmcode.galleryapp.R
 import com.lnmcode.galleryapp.bindables.BindingFragment
 import com.lnmcode.galleryapp.business.domain.models.topicphoto.TopicPhoto
