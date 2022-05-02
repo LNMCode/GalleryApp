@@ -20,10 +20,13 @@ object RecyclerViewBinding {
         adapter: BoardsAdapter,
         topics: List<Topics>?,
     ) {
-        if (!topics.isNullOrEmpty()) {
-            adapter.addTopics(topics)
+        if (view.adapter != null) {
+            val adapterRecycler = view.adapter as BoardsAdapter
+            adapterRecycler.addTopics(topics ?: emptyList())
+        } else {
             view.adapter = adapter
         }
+
     }
 
     @JvmStatic
@@ -33,8 +36,12 @@ object RecyclerViewBinding {
         adapter: BoardTopicsAdapter,
         topics: List<TopicsCacheDomain>,
     ) {
-        adapter.addTopics(topics)
-        view.adapter = adapter
+        if (view.adapter != null) {
+            val adapterRecycler = view.adapter as BoardTopicsAdapter
+            adapterRecycler.addTopics(topics)
+        } else {
+            view.adapter = adapter
+        }
     }
 
     @JvmStatic
@@ -44,8 +51,12 @@ object RecyclerViewBinding {
         adapter: GalleryHeadAdapter,
         topicPhoto: List<TopicPhoto>,
     ) {
-        adapter.addTopics(topicPhoto)
-        view.adapter = adapter
+        if (view.adapter != null) {
+            val adapterRecycler = view.adapter as GalleryHeadAdapter
+            adapterRecycler.addTopics(topicPhoto)
+        } else {
+            view.adapter = adapter
+        }
     }
 
     @JvmStatic
@@ -55,8 +66,12 @@ object RecyclerViewBinding {
         adapter: GalleryAdapter,
         topicPhoto: List<TopicPhoto>,
     ) {
-        adapter.addTopics(topicPhoto)
-        view.adapter = adapter
+        if (view.adapter != null) {
+            val adapterRecycler = view.adapter as GalleryAdapter
+            adapterRecycler.addTopics(topicPhoto)
+        } else {
+            view.adapter = adapter
+        }
     }
 
 }
