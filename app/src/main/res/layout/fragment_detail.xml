@@ -5,6 +5,10 @@
 
     <data>
 
+        <variable
+            name="vm"
+            type="com.lnmcode.galleryapp.presentation.ui.detail.DetailViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,14 +16,223 @@
         android:layout_height="match_parent"
         tools:context=".presentation.ui.detail.DetailFragment">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Detail fragment"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_background"
+                app:loadImage="@{vm.topicPhoto.topicPhotoUrls.regular}" />
+
+            <LinearLayout
+                android:id="@+id/bottom_sheet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                app:behavior_peekHeight="115dp"
+                app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/standard_bottom_sheet"
+                    style="?attr/bottomSheetStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/bg_radius_corner_white"
+                        android:orientation="vertical"
+                        android:paddingStart="70dp"
+                        android:paddingEnd="33dp"
+                        android:paddingVertical="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="20dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="@dimen/detail_size_ic_pend"
+                                android:layout_height="@dimen/detail_size_ic_pend"
+                                android:fontFamily="@font/font_europa_regular"
+                                android:src="@drawable/ic_pen_detail" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/detail_size_spacing_between_pend"
+                                android:fontFamily="@font/font_europa_regular"
+                                android:text="@{vm.topicPhoto.id}"
+                                android:textSize="@dimen/detail_size_text_title"
+                                tools:text="Digital Illustration" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="5dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/font_europa_regular"
+                                android:text="@string/detail_artist_title"
+                                android:textSize="@dimen/detail_size_text_title" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/font_europa_regular"
+                                android:maxLines="1"
+                                android:text="@{vm.topicPhoto.topicPhotoUser.name}"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/detail_size_text_normal"
+                                android:textStyle="bold"
+                                tools:text="Ken Taylor" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="5dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/font_europa_regular"
+                                android:text="@string/detail_size_title"
+                                android:textSize="@dimen/detail_size_text_title" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/font_europa_regular"
+                                android:maxLines="1"
+                                android:text="@{@string/detail_format_image_size_string(vm.topicPhoto.width, vm.topicPhoto.height)}"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/detail_size_text_normal"
+                                android:textStyle="bold"
+                                tools:text="Ken Taylor" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="5dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/font_europa_regular"
+                                android:text="@string/detail_location_title"
+                                android:textSize="@dimen/detail_size_text_title" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/font_europa_regular"
+                                android:maxLines="1"
+                                android:text="@{vm.topicPhoto.topicPhotoUser.location}"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/detail_size_text_normal"
+                                android:textStyle="bold"
+                                tools:text="Ken Taylor" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginVertical="15dp"
+                            android:background="@color/gray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/font_europa_regular"
+                            android:text="@{vm.topicPhoto.description ?? @string/detail_no_have_description}"
+                            android:textSize="@dimen/detail_size_text_title"
+                            tools:text="@string/detail_description_tools" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="20dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/font_europa_regular"
+                                android:text="@string/detail_link_download_title"
+                                android:textSize="@dimen/detail_size_text_title" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/font_europa_regular"
+                                android:maxLines="1"
+                                android:text="@{vm.topicPhoto.topicPhotoLinks.download}"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/detail_size_text_normal"
+                                android:textStyle="bold"
+                                tools:text="Podcast with Ken Taylkor #218" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_linear_gradient"
+                        android:fontFamily="@font/font_europa_regular"
+                        android:paddingHorizontal="38dp"
+                        android:elevation="5dp"
+                        android:paddingVertical="10dp"
+                        android:text="@string/detail_overview_title"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/detail_size_text_overview"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+                        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+                        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+                        app:layout_constraintTop_toTopOf="@+id/linearLayout" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btn_close"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="5dp"
+                android:padding="10dp"
+                android:src="@drawable/ic_arrow_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

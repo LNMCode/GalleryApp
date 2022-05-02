@@ -36,7 +36,7 @@
                 android:layout_marginHorizontal="@dimen/margin_screen"
                 android:fontFamily="@font/font_tt_norms"
                 android:paddingVertical="@dimen/padding_vertical_title_screen"
-                android:text="@string/title_boards_screen"
+                android:text="@string/boards_title_screen"
                 android:textColor="@color/black"
                 android:textSize="@dimen/board_text_title"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -50,7 +50,7 @@
                 android:layout_marginHorizontal="@dimen/margin_screen"
                 android:fontFamily="@font/font_tt_norms"
                 android:paddingVertical="@dimen/padding_vertical_caption_screen"
-                android:text="@string/caption_boards_screen"
+                android:text="@string/boards_caption_screen"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_title" />
 

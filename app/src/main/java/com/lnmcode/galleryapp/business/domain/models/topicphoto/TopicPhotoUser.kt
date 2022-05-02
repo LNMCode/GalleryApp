@@ -1,9 +1,9 @@
 package com.lnmcode.galleryapp.business.domain.models.topicphoto
 
-import com.google.gson.annotations.SerializedName
-import com.lnmcode.galleryapp.business.datasource.network.topicphoto.TopicPhotoUserLinksDto
-import com.lnmcode.galleryapp.business.datasource.network.topicphoto.TopicPhotoUserProfileImageDto
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class TopicPhotoUser(
     val id : String,
     val updatedAt  : String,
@@ -22,4 +22,4 @@ data class TopicPhotoUser(
     val totalPhotos : Int,
     val acceptedTos : Boolean,
     val forHire : Boolean,
-)
+): Parcelable
