@@ -13,4 +13,6 @@
     <string name="detail_no_have_description">No have any description</string>
     <string name="gallery_title_screen">Gallery</string>
     <string name="gallery_caption_screen">Curated Galleries</string>
+    <string name="gallery_trainsition_name_grid">%1$s_grid</string>
+    <string name="gallery_trainsition_name_top">%1$s_top</string>
 </resources>
