@@ -14,7 +14,7 @@ data class TopicsUsers(
     val twitterUsername: String,
     val portfolioUrl: String,
     val bio: String,
-    val location: String,
+    val location: String?,
     val topicsUserLinks: TopicsUserLinks,
     val topicsUserProfileImage: TopicsUserProfileImage,
     val instagramUsername: String,

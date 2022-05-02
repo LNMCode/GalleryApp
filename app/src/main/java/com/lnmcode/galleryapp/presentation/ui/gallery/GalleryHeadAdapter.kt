@@ -4,11 +4,12 @@ import android.view.View
 import com.lnmcode.galleryapp.R
 import com.lnmcode.galleryapp.business.domain.models.topicphoto.TopicPhoto
 import com.lnmcode.galleryapp.presentation.adapter.BaseAdapter
+import com.lnmcode.galleryapp.presentation.ui.OnChangeLayout
 import com.lnmcode.galleryapp.presentation.viewholder.GalleryViewHolder
 import timber.log.Timber
 
 class GalleryHeadAdapter(
-    private val onChangeLayout: (TopicPhoto) -> Unit,
+    private val onChangeLayout: OnChangeLayout,
 ) : BaseAdapter<TopicPhoto>() {
 
     fun addTopics(topicPhoto: List<TopicPhoto>) {

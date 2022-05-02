@@ -45,7 +45,7 @@ class DetailFragment : BindingFragment<FragmentDetailBinding>(R.layout.fragment_
     }
 
     private fun backPopNav() {
-        findNavController().popBackStack(R.id.galleryFragment, false)
+        findNavController().popBackStack(R.id.galleryFragment, true)
     }
 
     override fun getBottomSheetBehavior(bottomSheet: View): BottomSheetBehavior<View> {

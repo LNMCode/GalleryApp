@@ -6,11 +6,12 @@ import com.lnmcode.galleryapp.business.domain.models.topic.Topic
 import com.lnmcode.galleryapp.business.domain.models.topicphoto.TopicPhoto
 import com.lnmcode.galleryapp.databinding.LayoutItemGalleryBinding
 import com.lnmcode.galleryapp.presentation.adapter.BaseViewHolder
+import com.lnmcode.galleryapp.presentation.ui.OnChangeLayout
 import timber.log.Timber
 
 class GalleryViewHolder(
     view: View,
-    private val onChangeLayout: (TopicPhoto) -> Unit,
+    private val onChangeLayout: OnChangeLayout,
 ) : BaseViewHolder(view) {
 
     private lateinit var data: TopicPhoto
@@ -30,7 +31,7 @@ class GalleryViewHolder(
 
     override fun onClick(v: View?) {
         Timber.d("GalleryViewHolder clicked item ${data.id}")
-        onChangeLayout(data)
+        onChangeLayout.onChangeWithParameters(data)
     }
 
 }

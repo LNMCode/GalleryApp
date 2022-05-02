@@ -24,7 +24,6 @@ class BoardsViewModel(
         onSuccess = { isLoading = true }
     )
 
-
     @get:Bindable
     val topics: List<Topics> by topicsFlow.asBindingProperty(viewModelScope, emptyList())
     private val topicsCacheStateFlow = MutableStateFlow(0)
