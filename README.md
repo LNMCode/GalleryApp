@@ -16,9 +16,9 @@ Go to the [Releases](https://github.com/LNMCode/GalleryApp/releases) to download
 
 ## Screenshots
 <p align="center">
-<img src="/preview/preview0.gif" width="32%"/>
-<img src="/preview/preview1.gif" width="32%"/>
-<img src="/preview/preview2.gif" width="32%"/>
+<img src="/preview/preview01.gif" width="32%"/>
+<img src="/preview/preview02.gif" width="32%"/>
+<img src="/preview/preview03.gif" width="32%"/>
 </p>
 
 ## Tech stack & Open-source libraries
