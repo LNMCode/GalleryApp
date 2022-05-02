@@ -24,6 +24,7 @@ object RecyclerViewBinding {
             val adapterRecycler = view.adapter as BoardsAdapter
             adapterRecycler.addTopics(topics ?: emptyList())
         } else {
+            adapter.addTopics(topics ?: emptyList())
             view.adapter = adapter
         }
 
@@ -40,6 +41,7 @@ object RecyclerViewBinding {
             val adapterRecycler = view.adapter as BoardTopicsAdapter
             adapterRecycler.addTopics(topics)
         } else {
+            adapter.addTopics(topics)
             view.adapter = adapter
         }
     }
@@ -55,6 +57,7 @@ object RecyclerViewBinding {
             val adapterRecycler = view.adapter as GalleryHeadAdapter
             adapterRecycler.addTopics(topicPhoto)
         } else {
+            adapter.addTopics(topicPhoto)
             view.adapter = adapter
         }
     }
@@ -70,6 +73,7 @@ object RecyclerViewBinding {
             val adapterRecycler = view.adapter as GalleryAdapter
             adapterRecycler.addTopics(topicPhoto)
         } else {
+            adapter.addTopics(topicPhoto)
             view.adapter = adapter
         }
     }
