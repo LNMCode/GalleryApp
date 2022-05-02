@@ -34,7 +34,6 @@
         android:name="com.lnmcode.galleryapp.presentation.ui.gallery.GalleryFragment"
         android:label="GalleryFragment"
         tools:layout="@layout/fragment_gallery">
-
         <action
             android:id="@+id/action_galleryFragment_to_detailFragment"
             app:destination="@id/detailFragment" />

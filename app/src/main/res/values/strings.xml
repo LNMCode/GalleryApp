@@ -12,5 +12,5 @@
     <string name="detail_format_image_size_string">%1$s x %2$s</string>
     <string name="detail_no_have_description">No have any description</string>
     <string name="gallery_title_screen">Gallery</string>
-    <string name="gallery_caption_screen">Curated Gallery</string>
+    <string name="gallery_caption_screen">Curated Galleries</string>
 </resources>

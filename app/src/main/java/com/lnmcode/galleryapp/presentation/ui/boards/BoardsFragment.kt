@@ -20,6 +20,7 @@ class BoardsFragment(
     BoardsActionCacheEvent {
 
     private val viewModel: BoardsViewModel by viewModel()
+    lateinit var topics :Topics
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,6 +33,12 @@ class BoardsFragment(
             adapterTopics = BoardTopicsAdapter(this@BoardsFragment)
             vm = viewModel
         }.root
+    }
+    private fun onActionToGalleryFragment(topics : Topics){
+        findNavController().navigate(
+            BoardsFragmentDirections.actionBoardsFragmentToGalleryFragment(topics)
+        )
+
     }
 
     override fun onChangeSharedWithParameters(data: Any, viewItemShare: ImageView) {

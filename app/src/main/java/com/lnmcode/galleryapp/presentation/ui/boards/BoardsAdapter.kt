@@ -2,6 +2,8 @@ package com.lnmcode.galleryapp.presentation.ui.boards
 
 import android.view.View
 import com.lnmcode.galleryapp.R
+import com.lnmcode.galleryapp.business.domain.cache.TopicsCacheDomain
+import com.lnmcode.galleryapp.business.domain.models.topicphoto.TopicPhoto
 import com.lnmcode.galleryapp.business.domain.models.topics.Topics
 import com.lnmcode.galleryapp.presentation.adapter.BaseAdapter
 import com.lnmcode.galleryapp.presentation.ui.OnChangeLayout
