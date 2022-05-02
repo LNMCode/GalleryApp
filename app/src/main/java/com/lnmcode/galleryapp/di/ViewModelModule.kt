@@ -13,7 +13,7 @@ val viewModelModule = module {
 
     viewModel { BoardsViewModel(get(), get()) }
 
-    viewModel { GalleryViewModel(get()) }
+    viewModel { (topicsId: String) -> GalleryViewModel(topicsId, get()) }
 
     viewModel { DetailViewModel() }
 }

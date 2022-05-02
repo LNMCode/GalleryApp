@@ -11,6 +11,7 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
@@ -26,7 +27,9 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
+                android:id="@+id/image"
                 android:layout_width="match_parent"
+                android:transitionName="@{topicPhoto.id}"
                 android:layout_height="match_parent"
                 android:background="@drawable/boder_image_itemgallery"
                 android:scaleType="centerCrop"

@@ -21,9 +21,11 @@
             android:layout_height="match_parent">
 
             <ImageView
+                android:id="@+id/img_detail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
+                android:transitionName="image_transition_detail"
                 android:src="@drawable/ic_launcher_background"
                 app:loadImage="@{vm.topicPhoto.topicPhotoUrls.regular}" />
 

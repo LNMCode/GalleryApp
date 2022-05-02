@@ -9,7 +9,7 @@ import com.lnmcode.galleryapp.presentation.adapter.SectionRow
 import com.lnmcode.galleryapp.presentation.viewholder.BoardTopicsViewHolder
 
 class BoardTopicsAdapter(
-    private val deleteTopicsCache: (topicsCacheDomain: TopicsCacheDomain) -> Unit,
+    private val boardsActionCacheEvent: BoardsActionCacheEvent,
 ) : BaseAdapter<TopicsCacheDomain>() {
 
     init {
@@ -22,7 +22,7 @@ class BoardTopicsAdapter(
 
     override fun layout() = R.layout.layout_item_topics_boards
 
-    override fun viewHolder(view: View) = BoardTopicsViewHolder(view, deleteTopicsCache)
+    override fun viewHolder(view: View) = BoardTopicsViewHolder(view, boardsActionCacheEvent)
 
     override fun areItemsTheSameItem(
         oldItem: TopicsCacheDomain,
