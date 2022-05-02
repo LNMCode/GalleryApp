@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+
+
+        <variable
+            name="adapterHead"
+            type="com.lnmcode.galleryapp.presentation.ui.gallery.GalleryHeadAdapter" />
+
+        <variable
+            name="adapterGrid"
+            type="com.lnmcode.galleryapp.presentation.ui.gallery.GalleryAdapter" />
+        <variable
+            name="vm"
+            type="com.lnmcode.galleryapp.presentation.ui.gallery.GalleryViewModel" />
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.ui.gallery.GalleryFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+           >
+
+
+            <TextView
+                android:layout_marginHorizontal="10dp"
+                android:id="@+id/tv_title_gallery"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/font_tt_norms"
+                android:paddingVertical="@dimen/padding_vertical_title_screen"
+                android:text="@string/gallery_title_screen"
+                android:textColor="@color/black"
+                android:textSize="@dimen/gallery_text_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_back" />
+
+            <TextView
+                android:layout_marginHorizontal="10dp"
+                android:id="@+id/tv_caption_gallery"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/font_tt_norms"
+                android:paddingVertical="@dimen/padding_vertical_caption_screen"
+                android:paddingStart="2dp"
+                android:text="@string/gallery_caption_screen"
+                android:textSize="@dimen/gallery_text_caption"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_gallery" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_top_gallery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                app:adapter="@{adapterHead}"
+                app:adapterTopicPhoto="@{vm.topicPhoto}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_caption_gallery"
+                tools:listitem="@layout/layout_item_gallery">
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:orientation="vertical"
+                app:spanCount="2"
+                android:id="@+id/recyclerView_grid"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                app:adapter="@{adapterGrid}"
+                app:adapterGridTopicPhoto="@{vm.topicPhoto}"
+                app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recyclerview_top_gallery"
+                tools:listitem="@layout/layout_item_gridview_gallery" />
+            <androidx.appcompat.widget.AppCompatImageView
+
+                app:layout_constraintHorizontal_bias="0"
+                android:id="@+id/btn_back"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="5dp"
+                android:padding="10dp"
+                android:src="@drawable/ic_baseline_arrow_back_ios_24"
+                app:layout_constraintBottom_toTopOf="@id/tv_title_gallery"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

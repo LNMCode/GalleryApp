@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_screen">12dp</dimen>
+    <dimen name="padding_vertical_title_screen">8dp</dimen>
+    <dimen name="padding_vertical_caption_screen">2dp</dimen>
+    <dimen name="board_height_card">260dp</dimen>
+    <dimen name="board_size_ic_add_card">25dp</dimen>
+    <dimen name="board_size_spacing_bottom_card">10dp</dimen>
+    <dimen name="board_padding_title_card">15dp</dimen>
+    <dimen name="board_text_title">34sp</dimen>
+    <dimen name="gallery_text_caption">20dp</dimen>
+    <dimen name="gallery_text_title">34sp</dimen>
+    <dimen name="board_space_between_image_card">1dp</dimen>
+    <dimen name="board_corner_radius_card">10dp</dimen>
+    <dimen name="board_spacing_container_card">4dp</dimen>
+    <dimen name="board_padding_vertical_list_topics_cache">15dp</dimen>
+    <dimen name="board_size_spacing_between_eles_item_topics_cache">10dp</dimen>
+    <dimen name="board_size_spacing_between_topics_cache">8dp</dimen>
+    <dimen name="board_size_ic_close_topics_cache">12dp</dimen>
+    <dimen name="detail_size_ic_pend">15dp</dimen>
+    <dimen name="detail_size_text_title">15sp</dimen>
+    <dimen name="detail_size_text_normal">17sp</dimen>
+    <dimen name="detail_size_spacing_between_pend">6dp</dimen>
+    <dimen name="detail_size_text_overview">20sp</dimen>
+</resources>

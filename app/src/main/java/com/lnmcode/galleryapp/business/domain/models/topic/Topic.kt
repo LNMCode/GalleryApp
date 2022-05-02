@@ -1,0 +1,20 @@
+package com.lnmcode.galleryapp.business.domain.models.topic
+data class Topic(
+   val id                          : String?,
+   val slug                        : String?,
+   val title                       : String?,
+   val description                 : String?,
+   val publishedAt                 : String?,
+   val updatedAt                   : String?,
+   val startsAt                    : String?,
+   val endsAt                      : String?,
+   val onlySubmissionsAfter        : String?,
+   val featured                    : Boolean?,
+   val totalPhotos                 : Int?,
+   val totalCurrentUserSubmissions : String?,
+   val topicLinks               : TopicLinks?,
+   val status                      : String?,
+   val topicOwners              : List<TopicOwners>?,
+   val topContributors          : List<TopicTopContributors>?,
+   val topicCoverPhoto          : TopicCoverPhoto?,
+   )

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="topics"
+            type="com.lnmcode.galleryapp.business.domain.cache.TopicsCacheDomain" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/board_size_spacing_between_topics_cache"
+        android:background="@drawable/bg_linear_gradient"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="@{topics.title}"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/img_icon_remove"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Paintings" />
+
+        <ImageView
+            android:id="@+id/img_icon_remove"
+            android:layout_width="@dimen/board_size_ic_close_topics_cache"
+            android:layout_height="@dimen/board_size_ic_close_topics_cache"
+            android:layout_marginLeft="@dimen/board_size_spacing_between_eles_item_topics_cache"
+            android:src="@drawable/ic_close"
+            app:layout_constraintBottom_toBottomOf="@+id/textView"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="@+id/textView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
