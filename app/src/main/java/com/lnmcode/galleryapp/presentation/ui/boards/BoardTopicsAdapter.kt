@@ -9,6 +9,7 @@ import com.lnmcode.galleryapp.presentation.adapter.SectionRow
 import com.lnmcode.galleryapp.presentation.viewholder.BoardTopicsViewHolder
 
 class BoardTopicsAdapter(
+
     private val deleteTopicsCache: (topicsCacheDomain: TopicsCacheDomain) -> Unit,
 ) : BaseAdapter<TopicsCacheDomain>() {
 
