@@ -3,12 +3,10 @@ package com.lnmcode.galleryapp.presentation.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.OnLifecycleEvent
+import androidx.lifecycle.*
 import androidx.recyclerview.widget.*
 
-abstract class BaseAdapter<T> : RecyclerView.Adapter<BaseViewHolder>(), LifecycleObserver {
+abstract class BaseAdapter<T> : RecyclerView.Adapter<BaseViewHolder>(), DefaultLifecycleObserver {
 
     private val differ = AsyncListDiffer(
         getAdapterCallBack(),
@@ -75,9 +73,9 @@ abstract class BaseAdapter<T> : RecyclerView.Adapter<BaseViewHolder>(), Lifecycl
         return differ.currentList.size
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
-    public fun onDestroyed() {
-
+    override fun onDestroy(owner: LifecycleOwner) {
+        super.onDestroy(owner)
+        differ.currentList.clear()
     }
 
 }

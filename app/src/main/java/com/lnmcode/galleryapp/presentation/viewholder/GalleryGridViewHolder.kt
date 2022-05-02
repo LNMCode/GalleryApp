@@ -1,15 +1,16 @@
 package com.lnmcode.galleryapp.presentation.viewholder
 
-import android.util.Log
 import android.view.View
+import androidx.core.view.ViewCompat
 import com.lnmcode.galleryapp.business.domain.models.topicphoto.TopicPhoto
 import com.lnmcode.galleryapp.databinding.LayoutItemGridviewGalleryBinding
 import com.lnmcode.galleryapp.presentation.adapter.BaseViewHolder
+import com.lnmcode.galleryapp.presentation.ui.OnChangeLayout
 import timber.log.Timber
 
 class GalleryGridViewHolder(
     view: View,
-    private val onChangeLayout: (TopicPhoto) -> Unit,
+    private val onChangeLayout: OnChangeLayout,
 ) : BaseViewHolder(view) {
 
     private lateinit var data: TopicPhoto
@@ -30,6 +31,6 @@ class GalleryGridViewHolder(
 
     override fun onClick(v: View?) {
         Timber.d("GalleryGridViewHolder clicked item ${data.id}")
-        onChangeLayout(data)
+        onChangeLayout.onChangeSharedWithParameters(data, binding.image)
     }
 }

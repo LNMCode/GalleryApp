@@ -7,7 +7,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class TopicPhoto(
-    val id: String?,
+    val id: String,
     val createdAt : String?,
     val updatedAt : String?,
     val promotedAt : String?,

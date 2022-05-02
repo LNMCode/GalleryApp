@@ -22,9 +22,10 @@ class TopicPhotoUseCase(
     }
     @WorkerThread
     fun getTopicPhoto(
+        topicsId: String,
         onSuccess: () -> Unit,
     ) : Flow<List<TopicPhoto>> = flow{
-        val topicPhoto = topicPhotoApiRepository.topicPhoto(id= "BJJMtteDJA4", key =keyApi).map { it.toTopicPhoto()
+        val topicPhoto = topicPhotoApiRepository.topicPhoto(id= topicsId, key =keyApi).map { it.toTopicPhoto()
         }
         emit(topicPhoto)
     }.onCompletion {

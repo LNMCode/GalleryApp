@@ -9,6 +9,7 @@
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:id="@+id/item_container"
         android:layout_height="wrap_content">
         <com.google.android.material.card.MaterialCardView
             android:layout_marginHorizontal="5dp"
@@ -26,6 +27,8 @@
                 android:adjustViewBounds="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/image"
+                android:transitionName="@{topicPhoto.id}"
                 android:background="@drawable/boder_image_itemgallery"
                 android:src="@drawable/ic_launcher_background"
                 app:loadImage="@{topicPhoto.topicPhotoUrls.regular}" />

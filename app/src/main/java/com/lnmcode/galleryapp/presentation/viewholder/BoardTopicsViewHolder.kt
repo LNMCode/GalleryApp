@@ -4,11 +4,13 @@ import android.view.View
 import com.lnmcode.galleryapp.business.domain.cache.TopicsCacheDomain
 import com.lnmcode.galleryapp.databinding.LayoutItemTopicsBoardsBinding
 import com.lnmcode.galleryapp.presentation.adapter.BaseViewHolder
+import com.lnmcode.galleryapp.presentation.ui.OnChangeLayout
+import com.lnmcode.galleryapp.presentation.ui.boards.BoardsActionCacheEvent
 import timber.log.Timber
 
 class BoardTopicsViewHolder(
     view: View,
-    private val deleteTopicsCache: (TopicsCacheDomain) -> Unit,
+    private val boardsActionCacheEvent: BoardsActionCacheEvent,
 ) : BaseViewHolder(view) {
     private lateinit var data: TopicsCacheDomain
     private val binding: LayoutItemTopicsBoardsBinding by bindings()
@@ -30,7 +32,7 @@ class BoardTopicsViewHolder(
                     title = data.title,
                     description = data.description
                 )
-                deleteTopicsCache(topicsData)
+                boardsActionCacheEvent.deleteTopicsCache(topicsData)
             }
         }
     }
