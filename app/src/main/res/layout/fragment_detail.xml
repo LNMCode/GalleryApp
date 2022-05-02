@@ -49,7 +49,8 @@
                         android:layout_marginTop="30dp"
                         android:background="@drawable/bg_radius_corner_white"
                         android:orientation="vertical"
-                        android:paddingHorizontal="70dp"
+                        android:paddingStart="70dp"
+                        android:paddingEnd="33dp"
                         android:paddingVertical="20dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -65,12 +66,14 @@
                             <ImageView
                                 android:layout_width="@dimen/detail_size_ic_pend"
                                 android:layout_height="@dimen/detail_size_ic_pend"
+                                android:fontFamily="@font/font_europa_regular"
                                 android:src="@drawable/ic_pen_detail" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="@dimen/detail_size_spacing_between_pend"
+                                android:fontFamily="@font/font_europa_regular"
                                 android:text="@{vm.topicPhoto.id}"
                                 android:textSize="@dimen/detail_size_text_title"
                                 tools:text="Digital Illustration" />
@@ -86,12 +89,14 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/font_europa_regular"
                                 android:text="@string/detail_artist_title"
                                 android:textSize="@dimen/detail_size_text_title" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/font_europa_regular"
                                 android:maxLines="1"
                                 android:text="@{vm.topicPhoto.topicPhotoUser.name}"
                                 android:textColor="@color/black"
@@ -110,12 +115,14 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/font_europa_regular"
                                 android:text="@string/detail_size_title"
                                 android:textSize="@dimen/detail_size_text_title" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/font_europa_regular"
                                 android:maxLines="1"
                                 android:text="@{@string/detail_format_image_size_string(vm.topicPhoto.width, vm.topicPhoto.height)}"
                                 android:textColor="@color/black"
@@ -134,12 +141,14 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/font_europa_regular"
                                 android:text="@string/detail_location_title"
                                 android:textSize="@dimen/detail_size_text_title" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/font_europa_regular"
                                 android:maxLines="1"
                                 android:text="@{vm.topicPhoto.topicPhotoUser.location}"
                                 android:textColor="@color/black"
@@ -158,6 +167,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/font_europa_regular"
                             android:text="@{vm.topicPhoto.description ?? @string/detail_no_have_description}"
                             android:textSize="@dimen/detail_size_text_title"
                             tools:text="@string/detail_description_tools" />
@@ -171,12 +181,14 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/font_europa_regular"
                                 android:text="@string/detail_link_download_title"
                                 android:textSize="@dimen/detail_size_text_title" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/font_europa_regular"
                                 android:maxLines="1"
                                 android:text="@{vm.topicPhoto.topicPhotoLinks.download}"
                                 android:textColor="@color/black"
@@ -193,10 +205,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/bg_linear_gradient"
-                        android:paddingHorizontal="30dp"
-                        android:paddingVertical="15dp"
+                        android:fontFamily="@font/font_europa_regular"
+                        android:paddingHorizontal="38dp"
+                        android:elevation="5dp"
+                        android:paddingVertical="10dp"
                         android:text="@string/detail_overview_title"
                         android:textColor="@color/white"
+                        android:textSize="@dimen/detail_size_text_overview"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
                         app:layout_constraintEnd_toEndOf="@+id/linearLayout"
@@ -206,6 +221,16 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btn_close"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="5dp"
+                android:padding="10dp"
+                android:src="@drawable/ic_arrow_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

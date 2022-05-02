@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.lnmcode.galleryapp.R
@@ -36,10 +37,15 @@ class DetailFragment : BindingFragment<FragmentDetailBinding>(R.layout.fragment_
         viewModel.setTopicPhotoArgs(topicPhoto)
         binding {
             bottomSheetBehavior = getBottomSheetBehavior(bottomSheet)
+            btnClose.setOnClickListener { backPopNav() }
             textView2.setOnClickListener {
                 showAndHideBottomSheet()
             }
         }
+    }
+
+    private fun backPopNav() {
+        findNavController().popBackStack(R.id.galleryFragment, false)
     }
 
     override fun getBottomSheetBehavior(bottomSheet: View): BottomSheetBehavior<View> {
