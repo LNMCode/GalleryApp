@@ -79,7 +79,7 @@
                 android:layout_marginTop="20dp"
                 app:adapter="@{adapterGrid}"
                 app:adapterGridTopicPhoto="@{vm.topicPhoto}"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/recyclerview_top_gallery"

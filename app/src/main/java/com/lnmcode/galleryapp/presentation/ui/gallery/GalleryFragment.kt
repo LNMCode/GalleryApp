@@ -6,6 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.lnmcode.galleryapp.R
 import com.lnmcode.galleryapp.bindables.BindingFragment
 import com.lnmcode.galleryapp.business.domain.models.topicphoto.TopicPhoto
