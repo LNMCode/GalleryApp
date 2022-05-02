@@ -26,6 +26,7 @@
                 android:id="@+id/img_item_topGallery"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:transitionName="@{@string/gallery_trainsition_name_top(topicPhoto.id)}"
                 android:background="@drawable/boder_image_itemgallery"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_launcher_background">

@@ -21,7 +21,7 @@ data class TopicPhoto(
     val topicPhotoLinks : TopicPhotoLinks,
     val likes: Int,
     val likedByUser: Boolean,
-    val sponsorship: String?,
+    //val sponsorship: String?,
     val topicPhotoUser: TopicPhotoUser
 ): Parcelable
 

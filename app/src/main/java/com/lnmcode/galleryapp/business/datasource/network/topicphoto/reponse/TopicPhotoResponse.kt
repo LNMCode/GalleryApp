@@ -19,7 +19,7 @@ data class TopicPhotoResponse(
     @SerializedName("links") val topicPhotoLinksDto : TopicPhotoLinksDto,
     @SerializedName("likes") val likes: Int,
     @SerializedName("liked_by_user") val likedByUser: Boolean,
-    @SerializedName("sponsorship") val sponsorship: String?,
+    //@SerializedName("sponsorship") val sponsorship: String?,
     @SerializedName("user") val topicPhotoUserDto: TopicPhotoUserDto
 )
 fun TopicPhotoResponse.toTopicPhoto() : TopicPhoto{
@@ -38,7 +38,7 @@ fun TopicPhotoResponse.toTopicPhoto() : TopicPhoto{
         topicPhotoLinks =topicPhotoLinksDto.toTopicPhotoLinks(),
         likes= likes,
         likedByUser=likedByUser,
-        sponsorship=sponsorship,
+        //sponsorship=sponsorship,
         topicPhotoUser=topicPhotoUserDto.toTopicPhotoUser()
     )
 }
