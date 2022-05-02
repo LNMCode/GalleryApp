@@ -12,14 +12,16 @@ import com.lnmcode.galleryapp.presentation.viewholder.GalleryViewHolder
 import timber.log.Timber
 
 
-class GalleryAdapter : BaseAdapter<TopicPhoto>() {
+class GalleryAdapter(
+    private val onChangeLayout: (TopicPhoto) -> Unit,
+) : BaseAdapter<TopicPhoto>() {
     fun addTopics(topicPhoto: List<TopicPhoto>) {
         addSubmit(topicPhoto)
     }
 
     override fun layout() = R.layout.layout_item_gridview_gallery
 
-    override fun viewHolder(view: View) = GalleryGridViewHolder(view)
+    override fun viewHolder(view: View) = GalleryGridViewHolder(view, onChangeLayout)
 
     override fun areItemsTheSameItem(oldItem: TopicPhoto, newItem: TopicPhoto): Boolean {
         return oldItem.id == newItem.id

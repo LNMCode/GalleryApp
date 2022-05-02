@@ -6,8 +6,11 @@
     <string name="detail_artist_title">Artist</string>
     <string name="detail_size_title">Size</string>
     <string name="detail_location_title">Location</string>
+    <string name="detail_link_download_title">Location</string>
     <string name="detail_overview_title">Overview</string>
     <string name="detail_description_tools">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English.</string>
-    <string name ="title_gallery_screen">Gallery</string>
-    <string name="caption_gallery_screen">Curated Gallery</string>
+    <string name="detail_format_image_size_string">%1$s x %2$s</string>
+    <string name="detail_no_have_description">No have any description</string>
+    <string name="gallery_title_screen">Gallery</string>
+    <string name="gallery_caption_screen">Curated Gallery</string>
 </resources>

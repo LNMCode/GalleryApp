@@ -7,7 +7,10 @@ import com.lnmcode.galleryapp.databinding.LayoutItemGridviewGalleryBinding
 import com.lnmcode.galleryapp.presentation.adapter.BaseViewHolder
 import timber.log.Timber
 
-class GalleryGridViewHolder(view: View) : BaseViewHolder(view) {
+class GalleryGridViewHolder(
+    view: View,
+    private val onChangeLayout: (TopicPhoto) -> Unit,
+) : BaseViewHolder(view) {
 
     private lateinit var data: TopicPhoto
     private val binding: LayoutItemGridviewGalleryBinding by bindings()
@@ -15,9 +18,8 @@ class GalleryGridViewHolder(view: View) : BaseViewHolder(view) {
     override fun bindData(data: Any) {
         if (data is TopicPhoto) {
             this.data = data
-            Log.d("checkdata", "$data")
+            setUpLayout()
         }
-        setUpLayout()
     }
 
     private fun setUpLayout() {
@@ -27,7 +29,7 @@ class GalleryGridViewHolder(view: View) : BaseViewHolder(view) {
     }
 
     override fun onClick(v: View?) {
-        Timber.d("BoardViewItem clicked ${data.height}")
+        Timber.d("GalleryGridViewHolder clicked item ${data.id}")
+        onChangeLayout(data)
     }
-
 }

@@ -5,6 +5,10 @@
 
     <data>
 
+        <variable
+            name="vm"
+            type="com.lnmcode.galleryapp.presentation.ui.detail.DetailViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,7 +24,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_launcher_background" />
+                android:src="@drawable/ic_launcher_background"
+                app:loadImage="@{vm.topicPhoto.topicPhotoUrls.regular}" />
 
             <LinearLayout
                 android:id="@+id/bottom_sheet"
@@ -66,6 +71,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="@dimen/detail_size_spacing_between_pend"
+                                android:text="@{vm.topicPhoto.id}"
                                 android:textSize="@dimen/detail_size_text_title"
                                 tools:text="Digital Illustration" />
 
@@ -87,6 +93,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:maxLines="1"
+                                android:text="@{vm.topicPhoto.topicPhotoUser.name}"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/detail_size_text_normal"
                                 android:textStyle="bold"
@@ -110,6 +117,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:maxLines="1"
+                                android:text="@{@string/detail_format_image_size_string(vm.topicPhoto.width, vm.topicPhoto.height)}"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/detail_size_text_normal"
                                 android:textStyle="bold"
@@ -133,6 +141,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:maxLines="1"
+                                android:text="@{vm.topicPhoto.topicPhotoUser.location}"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/detail_size_text_normal"
                                 android:textStyle="bold"
@@ -149,8 +158,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/detail_description_tools"
-                            android:textSize="@dimen/detail_size_text_title" />
+                            android:text="@{vm.topicPhoto.description ?? @string/detail_no_have_description}"
+                            android:textSize="@dimen/detail_size_text_title"
+                            tools:text="@string/detail_description_tools" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -161,13 +171,14 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/detail_location_title"
+                                android:text="@string/detail_link_download_title"
                                 android:textSize="@dimen/detail_size_text_title" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:maxLines="1"
+                                android:text="@{vm.topicPhoto.topicPhotoLinks.download}"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/detail_size_text_normal"
                                 android:textStyle="bold"

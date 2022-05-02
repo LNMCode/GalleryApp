@@ -1,8 +1,11 @@
 package com.lnmcode.galleryapp.business.domain.models.topicphoto
+import android.os.Parcelable
 import com.lnmcode.galleryapp.business.datasource.network.topicphoto.TopicPhotoLinksDto
 import com.lnmcode.galleryapp.business.datasource.network.topicphoto.TopicPhotoUrlsDto
 import com.lnmcode.galleryapp.business.datasource.network.topicphoto.TopicPhotoUserDto
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class TopicPhoto(
     val id: String?,
     val createdAt : String?,
@@ -12,13 +15,13 @@ data class TopicPhoto(
     val height: Int,
     val color : String,
     val blurHash: String,
-//    val description: String,
-//    val altDescription: String,
+    val description: String?,
+    val altDescription: String?,
     val topicPhotoUrls : TopicPhotoUrls,
     val topicPhotoLinks : TopicPhotoLinks,
     val likes: Int,
     val likedByUser: Boolean,
     val sponsorship: String?,
     val topicPhotoUser: TopicPhotoUser
-)
+): Parcelable
 

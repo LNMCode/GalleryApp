@@ -1,7 +1,9 @@
 package com.lnmcode.galleryapp.business.domain.models.topicphoto
 
-import com.google.gson.annotations.SerializedName
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class TopicPhotoUserLinks(
     val self      : String,
     val html      : String,
@@ -10,4 +12,4 @@ data class TopicPhotoUserLinks(
     val portfolio : String,
     val following : String,
     val followers : String
-)
+): Parcelable
